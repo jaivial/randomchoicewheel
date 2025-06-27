@@ -34,7 +34,7 @@ server {
     
     server_name randomchoicewheel.com www.randomchoicewheel.com;
     
-    root /var/www/randomchoicewheel.com/dist;
+    root /var/www/randomchoicewheel.com;
     index index.html index.htm;
     
     # SSL Configuration (managed by Certbot)
