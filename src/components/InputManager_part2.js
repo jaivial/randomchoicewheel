@@ -108,9 +108,10 @@ export class InputManagerHelpers {
     const emptyDiv = document.createElement('div');
     emptyDiv.className = 'empty-state';
     emptyDiv.style.opacity = '0';
+    const message = this.manager.t('options.noOptionsYet');
     emptyDiv.innerHTML = `
       <p style="text-align: center; opacity: 0.7; font-style: italic; padding: 2rem;">
-        No options added yet. Add some options to get started!
+        ${message}
       </p>
     `;
     

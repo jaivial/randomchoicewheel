@@ -38,7 +38,8 @@ export default {
       'Option 2',
       'Option 3',
       'Option 4'
-    ]
+    ],
+    clearAllConfirmation: 'Are you sure you want to remove all {{count}} options?'
   },
 
   // Wheel section
@@ -74,7 +75,12 @@ export default {
     languages: {
       en: 'English',
       es: 'Spanish',
-      fr: 'French'
+      fr: 'French',
+      pt: 'Portuguese',
+      de: 'German',
+      zh: 'Chinese',
+      ja: 'Japanese',
+      ru: 'Russian'
     }
   },
 
@@ -85,13 +91,21 @@ export default {
     optionNumber: 'Option {{number}}',
     totalOptions: '{{count}} options total',
     noOptions: 'No options added',
+    noOptionsYet: 'No options added yet. Add some options to get started!',
+    noOptionsWheel: 'No Options Added',
+    noOptionsWheelDesc: 'Add some options to get started with your decision wheel!',
     saveEdit: 'Save',
-    cancelEdit: 'Cancel'
+    cancelEdit: 'Cancel',
+    editButton: 'Edit option',
+    removeButton: 'Remove option',
+    saveEditButton: 'Save changes',
+    cancelEditButton: 'Cancel editing'
   },
 
   // Wheel history
   history: {
     title: 'Results History',
+    button: 'History',
     noHistory: 'No spin history',
     lastResult: 'Last result: {{result}}',
     clearHistory: 'Clear History',
@@ -114,9 +128,11 @@ export default {
   success: {
     optionAdded: 'Option added successfully',
     optionDeleted: 'Option deleted successfully',
+    optionEdited: 'Updated: "{{oldText}}" → "{{newText}}"',
     optionsCleared: 'All options have been cleared',
     languageChanged: 'Language changed to {{language}}',
-    historyCleared: 'History cleared successfully'
+    historyCleared: 'History cleared successfully',
+    historyLoaded: 'Wheel configuration loaded!'
   },
 
   // Accessibility labels

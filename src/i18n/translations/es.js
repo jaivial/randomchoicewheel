@@ -75,7 +75,12 @@ export default {
     languages: {
       en: 'Inglés',
       es: 'Español',
-      fr: 'Francés'
+      fr: 'Francés',
+      pt: 'Portugués',
+      de: 'Alemán',
+      zh: 'Chino',
+      ja: 'Japonés',
+      ru: 'Ruso'
     }
   },
 
@@ -86,6 +91,9 @@ export default {
     optionNumber: 'Opción {{number}}',
     totalOptions: '{{count}} opciones en total',
     noOptions: 'No hay opciones añadidas',
+    noOptionsYet: 'Aún no se han añadido opciones. ¡Añade algunas opciones para empezar!',
+    noOptionsWheel: 'No se han Añadido Opciones',
+    noOptionsWheelDesc: '¡Añade algunas opciones para empezar con tu ruleta de decisiones!',
     saveEdit: 'Guardar',
     cancelEdit: 'Cancelar',
     editButton: 'Editar opción',

@@ -8,7 +8,7 @@
  * Base AdUnit class for creating ad components
  * Handles common ad functionality and styling
  */
-export class BaseAdUnit {
+class BaseAdUnit {
   constructor(placement, config = {}) {
     this.placement = placement;
     this.config = {
@@ -149,7 +149,7 @@ export class BaseAdUnit {
  * Header Ad Unit
  * Leaderboard banner for top of page
  */
-export class HeaderAdUnit extends BaseAdUnit {
+class HeaderAdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('header', {
       size: { width: 728, height: 90 },
@@ -174,7 +174,7 @@ export class HeaderAdUnit extends BaseAdUnit {
  * Sidebar Ad Unit
  * Medium rectangle for sidebar placement
  */
-export class SidebarAdUnit extends BaseAdUnit {
+class SidebarAdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('sidebar', {
       size: { width: 300, height: 250 },
@@ -204,7 +204,7 @@ export class SidebarAdUnit extends BaseAdUnit {
  * Content Ad Unit
  * Banner placement between content sections
  */
-export class ContentAdUnit extends BaseAdUnit {
+class ContentAdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('content', {
       size: { width: 320, height: 100 },
@@ -228,7 +228,7 @@ export class ContentAdUnit extends BaseAdUnit {
  * Footer Ad Unit
  * Bottom banner placement
  */
-export class FooterAdUnit extends BaseAdUnit {
+class FooterAdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('footer', {
       size: { width: 728, height: 90 },
@@ -253,7 +253,7 @@ export class FooterAdUnit extends BaseAdUnit {
  * Wheel Bottom Ad Unit
  * Medium rectangle below wheel (desktop only)
  */
-export class WheelBottomAdUnit extends BaseAdUnit {
+class WheelBottomAdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('wheel-bottom', {
       size: { width: 300, height: 250 },
@@ -287,7 +287,7 @@ export class WheelBottomAdUnit extends BaseAdUnit {
  * After Wheel 1 Ad Unit
  * Banner after main container
  */
-export class AfterWheel1AdUnit extends BaseAdUnit {
+class AfterWheel1AdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('after-wheel-1', {
       size: { width: 728, height: 90 },
@@ -313,7 +313,7 @@ export class AfterWheel1AdUnit extends BaseAdUnit {
  * After Wheel 2 Ad Unit
  * Rectangle after main container
  */
-export class AfterWheel2AdUnit extends BaseAdUnit {
+class AfterWheel2AdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('after-wheel-2', {
       size: { width: 300, height: 250 },
@@ -338,7 +338,7 @@ export class AfterWheel2AdUnit extends BaseAdUnit {
  * Modal Ad Unit
  * Interstitial or overlay ad placement
  */
-export class ModalAdUnit extends BaseAdUnit {
+class ModalAdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('modal', {
       size: { width: 300, height: 250 },
@@ -435,7 +435,7 @@ export class ModalAdUnit extends BaseAdUnit {
  * Sticky Ad Unit
  * Floating ad that stays in viewport
  */
-export class StickyAdUnit extends BaseAdUnit {
+class StickyAdUnit extends BaseAdUnit {
   constructor(config = {}) {
     super('sticky', {
       size: { width: 320, height: 50 },
@@ -494,7 +494,7 @@ export class StickyAdUnit extends BaseAdUnit {
  * AdUnit Factory
  * Creates appropriate ad units based on placement type
  */
-export class AdUnitFactory {
+class AdUnitFactory {
   static create(placement, config = {}) {
     switch (placement) {
       case 'header':

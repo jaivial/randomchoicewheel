@@ -15,10 +15,15 @@ export class WheelSpinnerHelpers {
     // Create fallback container
     const fallbackDiv = document.createElement('div');
     fallbackDiv.className = 'wheel-fallback glass-card';
+    const title = this.wheel.languageManager ? 
+      this.wheel.languageManager.t('options.noOptionsWheel') : 'No Options Added';
+    const description = this.wheel.languageManager ? 
+      this.wheel.languageManager.t('options.noOptionsWheelDesc') : 'Add some options to get started with your decision wheel!';
+    
     fallbackDiv.innerHTML = `
       <div class="fallback-icon">🎯</div>
-      <h3>No Options Added</h3>
-      <p>Add some options to get started with your decision wheel!</p>
+      <h3>${title}</h3>
+      <p>${description}</p>
       <div class="fallback-arrow">👆</div>
     `;
     

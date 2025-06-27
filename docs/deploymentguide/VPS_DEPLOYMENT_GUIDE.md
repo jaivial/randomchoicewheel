@@ -11,6 +11,7 @@
 8. [Automation Scripts](#automation-scripts)
 9. [Monitoring and Maintenance](#monitoring-and-maintenance)
 10. [Troubleshooting](#troubleshooting)
+11. [International SEO Deployment](#international-seo-deployment)
 
 ## Prerequisites
 
@@ -770,6 +771,44 @@ systemctl enable fail2ban
 systemctl start fail2ban
 ```
 
+## International SEO Deployment
+
+**⚠️ IMPORTANT: After completing the basic deployment above, you MUST implement the international SEO enhancements for the 40-language support to work properly.**
+
+### Required Additional Steps
+
+The application now includes comprehensive international SEO features supporting 40 languages with:
+- Advanced hreflang implementation
+- Country-specific sitemaps with regional targeting  
+- Tier-based language optimization
+- Enhanced meta tags and structured data
+- Mobile-first SEO for developing markets
+
+### Implementation Required
+
+**📋 See the complete SEO deployment guide:**
+- **File:** `docs/deploymentguide/SEO_DEPLOYMENT_ADDENDUM.md`
+- **Essential:** Enhanced Nginx configuration for language routing
+- **Critical:** SEO file generation scripts and sitemap handling
+- **Important:** International security headers and performance optimization
+
+### Quick SEO Deployment Summary
+
+1. **Update Nginx Configuration**: Enhanced config with language route support
+2. **Install SEO Scripts**: Sitemap generation and robots.txt automation  
+3. **Configure Analytics**: International traffic monitoring
+4. **Test All Routes**: Verify 40 language routes work correctly
+5. **Verify SEO Files**: Ensure sitemaps and robots.txt are properly generated
+
+**⚡ Run this after basic deployment:**
+```bash
+# Apply SEO enhancements (detailed in SEO_DEPLOYMENT_ADDENDUM.md)
+/root/generate-seo-files.sh
+/root/test-international-seo.sh
+```
+
+---
+
 Your Random Choice Wheel application should now be successfully deployed and accessible at https://randomchoicewheel.com!
 
-For ongoing maintenance, use the provided scripts and monitoring tools to ensure optimal performance and security.
+For ongoing maintenance, use the provided scripts and monitoring tools to ensure optimal performance and security. The international SEO features will ensure global visibility across all 40 supported languages and regions.

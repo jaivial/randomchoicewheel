@@ -75,7 +75,12 @@ export default {
     languages: {
       en: 'English',
       es: 'Spanish',
-      fr: 'French'
+      fr: 'French',
+      pt: 'Portuguese',
+      de: 'German',
+      zh: 'Chinese',
+      ja: 'Japanese',
+      ru: 'Russian'
     }
   },
 
@@ -86,6 +91,9 @@ export default {
     optionNumber: 'Option {{number}}',
     totalOptions: '{{count}} options total',
     noOptions: 'No options added',
+    noOptionsYet: 'No options added yet. Add some options to get started!',
+    noOptionsWheel: 'No Options Added',
+    noOptionsWheelDesc: 'Add some options to get started with your decision wheel!',
     saveEdit: 'Save',
     cancelEdit: 'Cancel',
     editButton: 'Edit option',

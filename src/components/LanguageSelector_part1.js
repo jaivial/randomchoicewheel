@@ -176,17 +176,32 @@ export class LanguageSelector {
     modalHeader.appendChild(modalTitle);
     modalHeader.appendChild(closeButton);
     
-    // Modal body with language options
+    // Modal body with organized language options
     const modalBody = document.createElement('div');
     modalBody.className = 'language-modal-body';
     
-    // Create language options
-    const supportedLanguages = this.languageManager.getSupportedLanguages();
+    // Create search box for 40+ languages
+    const searchContainer = document.createElement('div');
+    searchContainer.className = 'language-search-container';
     
-    Object.entries(supportedLanguages).forEach(([code, info]) => {
-      const option = this.createLanguageOption(code, info);
-      modalBody.appendChild(option);
-    });
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Search languages...';
+    searchInput.className = 'language-search-input';
+    searchInput.setAttribute('aria-label', 'Search languages');
+    
+    searchContainer.appendChild(searchInput);
+    modalBody.appendChild(searchContainer);
+    
+    // Get and organize languages by tier
+    const supportedLanguages = this.languageManager.getSupportedLanguages();
+    const languagesByTier = this.organizeLanguagesByTier(supportedLanguages);
+    
+    // Create tier sections
+    this.createTierSections(modalBody, languagesByTier);
+    
+    // Add search functionality
+    this.setupLanguageSearch(searchInput, modalBody);
     
     // Assemble modal
     this.modalContent.appendChild(modalHeader);
@@ -201,22 +216,28 @@ export class LanguageSelector {
   }
 
   /**
-   * Create a single language option
+   * Create a single language option with tier-based styling
    * @param {string} code - Language code
    * @param {Object} info - Language information
    * @returns {HTMLElement} Language option element
    */
   createLanguageOption(code, info) {
     const option = document.createElement('button');
-    option.className = 'language-option';
+    option.className = `language-option tier-${info.tier || 4}`;
     option.setAttribute('type', 'button');
     option.setAttribute('data-language', code);
+    option.setAttribute('data-tier', info.tier || 4);
     option.setAttribute('aria-label', `Select ${info.name}`);
+    
+    // Add speakers count for sorting hint
+    if (info.speakers) {
+      option.setAttribute('data-speakers', info.speakers);
+    }
     
     // Flag
     const flag = document.createElement('span');
     flag.className = 'language-flag';
-    flag.textContent = info.flag;
+    flag.textContent = info.flag || '🌐';
     flag.setAttribute('aria-hidden', 'true');
     
     // Language info container
@@ -228,10 +249,15 @@ export class LanguageSelector {
     nativeName.className = 'language-native-name';
     nativeName.textContent = info.nativeName;
     
-    // English name
+    // English name with speaker count for tier 1 languages
     const englishName = document.createElement('span');
     englishName.className = 'language-english-name';
-    englishName.textContent = info.name;
+    if (info.tier === 1 && info.speakers) {
+      const speakerCount = this.formatSpeakerCount(info.speakers);
+      englishName.textContent = `${info.name} (${speakerCount})`;
+    } else {
+      englishName.textContent = info.name;
+    }
     
     infoContainer.appendChild(nativeName);
     infoContainer.appendChild(englishName);
@@ -242,11 +268,198 @@ export class LanguageSelector {
     selectedIndicator.innerHTML = '✓';
     selectedIndicator.setAttribute('aria-hidden', 'true');
     
+    // Priority badge for tier 1 languages
+    if (info.tier === 1) {
+      const priorityBadge = document.createElement('span');
+      priorityBadge.className = 'language-priority-badge';
+      priorityBadge.textContent = 'Popular';
+      priorityBadge.setAttribute('aria-hidden', 'true');
+      option.appendChild(priorityBadge);
+    }
+    
     option.appendChild(flag);
     option.appendChild(infoContainer);
     option.appendChild(selectedIndicator);
     
     return option;
+  }
+
+  /**
+   * Format speaker count for display
+   * @param {number} speakers - Number of speakers
+   * @returns {string} Formatted speaker count
+   */
+  formatSpeakerCount(speakers) {
+    if (speakers >= 1000000000) {
+      return `${(speakers / 1000000000).toFixed(1)}B`;
+    } else if (speakers >= 1000000) {
+      return `${Math.round(speakers / 1000000)}M`;
+    } else if (speakers >= 1000) {
+      return `${Math.round(speakers / 1000)}K`;
+    }
+    return speakers.toString();
+  }
+
+  /**
+   * Organize languages by tier for better UX
+   * @param {Object} supportedLanguages - All supported languages
+   * @returns {Object} Languages organized by tier
+   */
+  organizeLanguagesByTier(supportedLanguages) {
+    const tiers = { 1: [], 2: [], 3: [], 4: [] };
+    
+    Object.entries(supportedLanguages).forEach(([code, info]) => {
+      const tier = info.tier || 4;
+      tiers[tier].push({ code, info });
+    });
+    
+    // Sort each tier by speaker count (descending)
+    Object.keys(tiers).forEach(tier => {
+      tiers[tier].sort((a, b) => (b.info.speakers || 0) - (a.info.speakers || 0));
+    });
+    
+    return tiers;
+  }
+
+  /**
+   * Create tier sections in the modal
+   * @param {HTMLElement} modalBody - Modal body element
+   * @param {Object} languagesByTier - Languages organized by tier
+   */
+  createTierSections(modalBody, languagesByTier) {
+    const tierNames = {
+      1: 'Most Popular Languages',
+      2: 'Regional Languages',
+      3: 'European & Asian Languages',
+      4: 'Additional Languages'
+    };
+
+    Object.entries(languagesByTier).forEach(([tier, languages]) => {
+      if (languages.length === 0) return;
+      
+      // Create tier section
+      const tierSection = document.createElement('div');
+      tierSection.className = `language-tier-section tier-${tier}`;
+      
+      // Tier header
+      const tierHeader = document.createElement('h3');
+      tierHeader.className = 'language-tier-header';
+      tierHeader.textContent = tierNames[tier];
+      tierSection.appendChild(tierHeader);
+      
+      // Languages container
+      const languagesContainer = document.createElement('div');
+      languagesContainer.className = 'language-tier-options';
+      
+      languages.forEach(({ code, info }) => {
+        const option = this.createLanguageOption(code, info);
+        languagesContainer.appendChild(option);
+      });
+      
+      tierSection.appendChild(languagesContainer);
+      modalBody.appendChild(tierSection);
+    });
+  }
+
+  /**
+   * Setup language search functionality
+   * @param {HTMLElement} searchInput - Search input element
+   * @param {HTMLElement} modalBody - Modal body element
+   */
+  setupLanguageSearch(searchInput, modalBody) {
+    let searchTimeout;
+    
+    searchInput.addEventListener('input', (event) => {
+      clearTimeout(searchTimeout);
+      
+      searchTimeout = setTimeout(() => {
+        const query = event.target.value.toLowerCase().trim();
+        this.filterLanguages(query, modalBody);
+      }, 150);
+    });
+    
+    // Clear search on escape
+    searchInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        event.target.value = '';
+        this.filterLanguages('', modalBody);
+        event.target.blur();
+      }
+    });
+  }
+
+  /**
+   * Filter languages based on search query
+   * @param {string} query - Search query
+   * @param {HTMLElement} modalBody - Modal body element
+   */
+  filterLanguages(query, modalBody) {
+    const options = modalBody.querySelectorAll('.language-option');
+    const tierSections = modalBody.querySelectorAll('.language-tier-section');
+    const tierHeaders = modalBody.querySelectorAll('.language-tier-header');
+    
+    if (!query) {
+      // Show all languages organized by tiers
+      options.forEach(option => {
+        option.style.display = '';
+      });
+      tierSections.forEach(section => {
+        section.style.display = '';
+      });
+      tierHeaders.forEach(header => {
+        header.style.display = '';
+      });
+      return;
+    }
+    
+    // Hide tier organization during search
+    tierHeaders.forEach(header => {
+      header.style.display = 'none';
+    });
+    
+    let hasVisibleOptions = false;
+    
+    options.forEach(option => {
+      const nativeName = option.querySelector('.language-native-name')?.textContent.toLowerCase() || '';
+      const englishName = option.querySelector('.language-english-name')?.textContent.toLowerCase() || '';
+      const languageCode = option.getAttribute('data-language').toLowerCase();
+      
+      const matches = nativeName.includes(query) || 
+                     englishName.includes(query) || 
+                     languageCode.includes(query);
+      
+      if (matches) {
+        option.style.display = '';
+        hasVisibleOptions = true;
+      } else {
+        option.style.display = 'none';
+      }
+    });
+    
+    // Show no results message if needed
+    this.toggleNoResultsMessage(modalBody, !hasVisibleOptions, query);
+  }
+
+  /**
+   * Toggle no results message
+   * @param {HTMLElement} modalBody - Modal body element
+   * @param {boolean} show - Whether to show the message
+   * @param {string} query - Search query
+   */
+  toggleNoResultsMessage(modalBody, show, query) {
+    let noResults = modalBody.querySelector('.language-no-results');
+    
+    if (show && !noResults) {
+      noResults = document.createElement('div');
+      noResults.className = 'language-no-results';
+      noResults.innerHTML = `
+        <p>No languages found for "${query}"</p>
+        <p class="suggestion">Try searching by language name or region</p>
+      `;
+      modalBody.appendChild(noResults);
+    } else if (!show && noResults) {
+      noResults.remove();
+    }
   }
 
   /**

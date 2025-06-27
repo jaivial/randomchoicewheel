@@ -1,20 +1,67 @@
 /**
- * Language Manager - Core Internationalization System
- * Handles automatic language detection, translation loading, and language switching
- * Optimized for SEO with browser language detection and fallback mechanisms
+ * Enhanced Language Manager - Advanced Internationalization System
+ * Handles automatic language detection, translation loading, URL routing, and SEO optimization
+ * Supports 8 major languages with complete localization features
  */
 
+import { LanguageRouter } from './LanguageRouter.js';
+
 /**
- * Core Language Manager Class
- * Manages internationalization across the entire application
+ * Enhanced Language Manager Class
+ * Manages internationalization across the entire application with routing integration
  */
 export class LanguageManager {
   constructor() {
-    // Supported languages configuration
+    // Enhanced supported languages configuration (40 languages for global coverage)
     this.supportedLanguages = {
-      'en': { name: 'English', nativeName: 'English', flag: '🇺🇸', rtl: false },
-      'es': { name: 'Spanish', nativeName: 'Español', flag: '🇪🇸', rtl: false },
-      'fr': { name: 'French', nativeName: 'Français', flag: '🇫🇷', rtl: false }
+      // Tier 1: Major Global Languages (10 languages)
+      'en': { name: 'English', nativeName: 'English', flag: '🇺🇸', rtl: false, region: 'US', speakers: 1500000000, tier: 1 },
+      'zh': { name: 'Chinese', nativeName: '中文', flag: '🇨🇳', rtl: false, region: 'CN', speakers: 918000000, tier: 1 },
+      'hi': { name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 602000000, tier: 1 },
+      'es': { name: 'Spanish', nativeName: 'Español', flag: '🇪🇸', rtl: false, region: 'ES', speakers: 559000000, tier: 1 },
+      'fr': { name: 'French', nativeName: 'Français', flag: '🇫🇷', rtl: false, region: 'FR', speakers: 280000000, tier: 1 },
+      'ar': { name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦', rtl: true, region: 'SA', speakers: 422000000, tier: 1 },
+      'bn': { name: 'Bengali', nativeName: 'বাংলা', flag: '🇧🇩', rtl: false, region: 'BD', speakers: 300000000, tier: 1 },
+      'pt': { name: 'Portuguese', nativeName: 'Português', flag: '🇧🇷', rtl: false, region: 'BR', speakers: 260000000, tier: 1 },
+      'ru': { name: 'Russian', nativeName: 'Русский', flag: '🇷🇺', rtl: false, region: 'RU', speakers: 258000000, tier: 1 },
+      'ja': { name: 'Japanese', nativeName: '日本語', flag: '🇯🇵', rtl: false, region: 'JP', speakers: 125000000, tier: 1 },
+      
+      // Tier 2: Regional Powerhouses (10 languages)
+      'pa': { name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 113000000, tier: 2 },
+      'de': { name: 'German', nativeName: 'Deutsch', flag: '🇩🇪', rtl: false, region: 'DE', speakers: 100000000, tier: 2 },
+      'jv': { name: 'Javanese', nativeName: 'Basa Jawa', flag: '🇮🇩', rtl: false, region: 'ID', speakers: 98000000, tier: 2 },
+      'te': { name: 'Telugu', nativeName: 'తెలుగు', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 96000000, tier: 2 },
+      'mr': { name: 'Marathi', nativeName: 'मराठी', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 95000000, tier: 2 },
+      'tr': { name: 'Turkish', nativeName: 'Türkçe', flag: '🇹🇷', rtl: false, region: 'TR', speakers: 88000000, tier: 2 },
+      'vi': { name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳', rtl: false, region: 'VN', speakers: 85000000, tier: 2 },
+      'ko': { name: 'Korean', nativeName: '한국어', flag: '🇰🇷', rtl: false, region: 'KR', speakers: 81000000, tier: 2 },
+      'ta': { name: 'Tamil', nativeName: 'தமிழ்', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 78000000, tier: 2 },
+      'ur': { name: 'Urdu', nativeName: 'اردو', flag: '🇵🇰', rtl: true, region: 'PK', speakers: 70000000, tier: 2 },
+      
+      // Tier 3: Major European & Asian Languages (10 languages)
+      'fa': { name: 'Persian', nativeName: 'فارسی', flag: '🇮🇷', rtl: true, region: 'IR', speakers: 70000000, tier: 3 },
+      'it': { name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹', rtl: false, region: 'IT', speakers: 65000000, tier: 3 },
+      'th': { name: 'Thai', nativeName: 'ไทย', flag: '🇹🇭', rtl: false, region: 'TH', speakers: 61000000, tier: 3 },
+      'gu': { name: 'Gujarati', nativeName: 'ગુજરાતી', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 56000000, tier: 3 },
+      'pl': { name: 'Polish', nativeName: 'Polski', flag: '🇵🇱', rtl: false, region: 'PL', speakers: 50000000, tier: 3 },
+      'kn': { name: 'Kannada', nativeName: 'ಕನ್ನಡ', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 44000000, tier: 3 },
+      'uk': { name: 'Ukrainian', nativeName: 'Українська', flag: '🇺🇦', rtl: false, region: 'UA', speakers: 41000000, tier: 3 },
+      'ml': { name: 'Malayalam', nativeName: 'മലയാളം', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 38000000, tier: 3 },
+      'or': { name: 'Odia', nativeName: 'ଓଡ଼ିଆ', flag: '🇮🇳', rtl: false, region: 'IN', speakers: 38000000, tier: 3 },
+      'my': { name: 'Burmese', nativeName: 'မြန်မာ', flag: '🇲🇲', rtl: false, region: 'MM', speakers: 33000000, tier: 3 },
+      
+      // Tier 4: Strategic Markets (10 languages)
+      'nl': { name: 'Dutch', nativeName: 'Nederlands', flag: '🇳🇱', rtl: false, region: 'NL', speakers: 25000000, tier: 4 },
+      'ro': { name: 'Romanian', nativeName: 'Română', flag: '🇷🇴', rtl: false, region: 'RO', speakers: 24000000, tier: 4 },
+      'sw': { name: 'Swahili', nativeName: 'Kiswahili', flag: '🇰🇪', rtl: false, region: 'KE', speakers: 20000000, tier: 4 },
+      'cs': { name: 'Czech', nativeName: 'Čeština', flag: '🇨🇿', rtl: false, region: 'CZ', speakers: 13000000, tier: 4 },
+      'hu': { name: 'Hungarian', nativeName: 'Magyar', flag: '🇭🇺', rtl: false, region: 'HU', speakers: 13000000, tier: 4 },
+      'el': { name: 'Greek', nativeName: 'Ελληνικά', flag: '🇬🇷', rtl: false, region: 'GR', speakers: 13000000, tier: 4 },
+      'sv': { name: 'Swedish', nativeName: 'Svenska', flag: '🇸🇪', rtl: false, region: 'SE', speakers: 10000000, tier: 4 },
+      'he': { name: 'Hebrew', nativeName: 'עברית', flag: '🇮🇱', rtl: true, region: 'IL', speakers: 9000000, tier: 4 },
+      'da': { name: 'Danish', nativeName: 'Dansk', flag: '🇩🇰', rtl: false, region: 'DK', speakers: 6000000, tier: 4 },
+      'no': { name: 'Norwegian', nativeName: 'Norsk', flag: '🇳🇴', rtl: false, region: 'NO', speakers: 5000000, tier: 4 },
+      'fi': { name: 'Finnish', nativeName: 'Suomi', flag: '🇫🇮', rtl: false, region: 'FI', speakers: 5000000, tier: 4 }
     };
     
     // Default configuration
@@ -29,8 +76,61 @@ export class LanguageManager {
       autoDetected: 'wheel_spinner_auto_detected'
     };
     
+    // Initialize the language router
+    this.router = new LanguageRouter();
+    
+    // Set up router event listening
+    this.setupRouterIntegration();
+    
     // Initialize the language system
     this.initialize();
+  }
+
+  /**
+   * Set up integration between Language Manager and Language Router
+   * Listens for router events and synchronizes state
+   */
+  setupRouterIntegration() {
+    // Listen for language changes from router
+    document.addEventListener('languageChanged', (event) => {
+      const { language } = event.detail;
+      
+      // Update current language if different
+      if (this.currentLanguage !== language) {
+        this.handleRouterLanguageChange(language);
+      }
+    });
+  }
+
+  /**
+   * Handle language change initiated by router
+   * @param {string} languageCode - New language code from router
+   */
+  async handleRouterLanguageChange(languageCode) {
+    try {
+      // Load translations if not already loaded
+      if (!this.translations[languageCode]) {
+        await this.loadTranslations(languageCode);
+      }
+      
+      // Update current language without router redirect (already handled by router)
+      const previousLanguage = this.currentLanguage;
+      this.currentLanguage = languageCode;
+      
+      // Update document language attribute
+      document.documentElement.lang = languageCode;
+      
+      // Update hreflang tags for SEO
+      this.router.updateHreflangTags();
+      
+      // Notify listeners about language change
+      this.notifyLanguageChange(languageCode, previousLanguage);
+      
+      console.log(`Language changed via router to: ${languageCode}`);
+      
+    } catch (error) {
+      console.error('Error handling router language change:', error);
+    }
   }
 
   /**
@@ -39,14 +139,23 @@ export class LanguageManager {
    */
   async initialize() {
     try {
-      // Detect and set initial language
-      const detectedLanguage = this.detectInitialLanguage();
+      // Get initial language from router (which handles URL detection)
+      const detectedLanguage = this.router.getCurrentLanguage().code;
       
       // Load translations for detected language
       await this.loadTranslations(detectedLanguage);
       
       // Set current language
-      this.setLanguage(detectedLanguage, false);
+      this.currentLanguage = detectedLanguage;
+      
+      // Update document language attribute
+      document.documentElement.lang = detectedLanguage;
+      
+      // Update hreflang tags for SEO
+      this.router.updateHreflangTags();
+      
+      // Notify listeners
+      this.notifyLanguageChange(detectedLanguage, null);
       
       console.log(`Language Manager initialized with language: ${detectedLanguage}`);
       
@@ -54,7 +163,8 @@ export class LanguageManager {
       console.error('Error initializing Language Manager:', error);
       // Fallback to default language
       await this.loadTranslations(this.defaultLanguage);
-      this.setLanguage(this.defaultLanguage, false);
+      this.currentLanguage = this.defaultLanguage;
+      document.documentElement.lang = this.defaultLanguage;
     }
   }
 
@@ -86,28 +196,88 @@ export class LanguageManager {
   }
 
   /**
-   * Detect browser language from various sources
+   * Enhanced browser language detection for 40 languages
+   * Supports exact locale matching and fallback strategies
    * @returns {string|null} Detected language code or null
    */
   detectBrowserLanguage() {
-    // Try different browser language sources in order of preference
+    // Get all browser language preferences
     const browserLanguages = [
       navigator.language,
-      navigator.languages?.[0],
+      ...(navigator.languages || []),
       navigator.userLanguage,
       navigator.browserLanguage,
       navigator.systemLanguage
     ].filter(Boolean);
     
-    for (const lang of browserLanguages) {
-      // Extract main language code (e.g., 'en' from 'en-US')
-      const langCode = lang.toLowerCase().split('-')[0];
+    console.log('Browser languages detected:', browserLanguages);
+    
+    // First pass: Try exact locale matching (e.g., 'en-US' -> 'en')
+    for (const browserLang of browserLanguages) {
+      const normalizedLang = browserLang.toLowerCase();
       
+      // Try exact locale match first (e.g., 'pt-BR' matches 'pt' with region 'BR')
+      for (const [code, config] of Object.entries(this.supportedLanguages)) {
+        const expectedLocale = `${code}-${config.region}`.toLowerCase();
+        if (normalizedLang === expectedLocale) {
+          console.log(`Exact locale match found: ${browserLang} -> ${code}`);
+          return code;
+        }
+      }
+      
+      // Try main language code match
+      const langCode = normalizedLang.split('-')[0];
       if (this.isLanguageSupported(langCode)) {
+        console.log(`Language code match found: ${browserLang} -> ${langCode}`);
         return langCode;
       }
     }
     
+    // Second pass: Try regional fallbacks for common language variants
+    const languageFallbacks = {
+      'en-gb': 'en', 'en-au': 'en', 'en-ca': 'en', 'en-nz': 'en',
+      'es-mx': 'es', 'es-ar': 'es', 'es-co': 'es', 'es-pe': 'es',
+      'pt-pt': 'pt', 'fr-ca': 'fr', 'fr-ch': 'fr',
+      'de-at': 'de', 'de-ch': 'de',
+      'zh-tw': 'zh', 'zh-hk': 'zh', 'zh-sg': 'zh',
+      'ar-ae': 'ar', 'ar-eg': 'ar', 'ar-ma': 'ar',
+      'hi-latn': 'hi', 'bn-in': 'bn'
+    };
+    
+    for (const browserLang of browserLanguages) {
+      const normalizedLang = browserLang.toLowerCase();
+      if (languageFallbacks[normalizedLang]) {
+        const fallbackCode = languageFallbacks[normalizedLang];
+        console.log(`Fallback match found: ${browserLang} -> ${fallbackCode}`);
+        return fallbackCode;
+      }
+    }
+    
+    // Third pass: Script-based detection for languages with specific scripts
+    for (const browserLang of browserLanguages) {
+      const normalizedLang = browserLang.toLowerCase();
+      
+      // Detect by script/writing system
+      if (normalizedLang.includes('arab') || normalizedLang.includes('ara')) return 'ar';
+      if (normalizedLang.includes('deva') || normalizedLang.includes('hindi')) return 'hi';
+      if (normalizedLang.includes('beng') || normalizedLang.includes('bengali')) return 'bn';
+      if (normalizedLang.includes('guru') || normalizedLang.includes('punjabi')) return 'pa';
+      if (normalizedLang.includes('telu') || normalizedLang.includes('telugu')) return 'te';
+      if (normalizedLang.includes('taml') || normalizedLang.includes('tamil')) return 'ta';
+      if (normalizedLang.includes('gujr') || normalizedLang.includes('gujarati')) return 'gu';
+      if (normalizedLang.includes('knda') || normalizedLang.includes('kannada')) return 'kn';
+      if (normalizedLang.includes('mlym') || normalizedLang.includes('malayalam')) return 'ml';
+      if (normalizedLang.includes('orya') || normalizedLang.includes('odia')) return 'or';
+      if (normalizedLang.includes('mymr') || normalizedLang.includes('burmese')) return 'my';
+      if (normalizedLang.includes('thai')) return 'th';
+      if (normalizedLang.includes('hebr') || normalizedLang.includes('hebrew')) return 'he';
+      if (normalizedLang.includes('cyrl') || normalizedLang.includes('cyrillic')) {
+        if (normalizedLang.includes('ru')) return 'ru';
+        if (normalizedLang.includes('uk')) return 'uk';
+      }
+    }
+    
+    console.log('No browser language match found, will use default');
     return null;
   }
 
@@ -155,8 +325,9 @@ export class LanguageManager {
    * Set the current application language
    * @param {string} languageCode - Language code to set
    * @param {boolean} savePreference - Whether to save this as user preference
+   * @param {boolean} updateURL - Whether to update the URL via router
    */
-  async setLanguage(languageCode, savePreference = true) {
+  async setLanguage(languageCode, savePreference = true, updateURL = true) {
     if (!this.isLanguageSupported(languageCode)) {
       console.warn(`Attempted to set unsupported language: ${languageCode}`);
       return;
@@ -178,6 +349,16 @@ export class LanguageManager {
     
     // Update document language attribute for SEO
     document.documentElement.lang = languageCode;
+    
+    // Update URL via router if requested (usually for manual language changes)
+    if (updateURL && this.router) {
+      this.router.redirectToLanguage(languageCode);
+    }
+    
+    // Update hreflang tags for SEO
+    if (this.router) {
+      this.router.updateHreflangTags();
+    }
     
     // Notify all listeners about language change
     this.notifyLanguageChange(languageCode, previousLanguage);
@@ -337,12 +518,82 @@ export class LanguageManager {
    * @returns {Object} Language usage statistics
    */
   getLanguageStats() {
+    const routerInfo = this.router ? this.router.getCurrentLanguage() : null;
+    
     return {
       current: this.currentLanguage,
       supported: Object.keys(this.supportedLanguages),
       autoDetected: this.isAutoDetected(),
       browserLanguage: this.detectBrowserLanguage(),
-      loadedTranslations: Object.keys(this.translations)
+      loadedTranslations: Object.keys(this.translations),
+      router: {
+        enabled: !!this.router,
+        currentPath: routerInfo ? routerInfo.basePath : null,
+        cleanPath: this.router ? this.router.getCleanPath() : null
+      }
+    };
+  }
+
+  /**
+   * Get localized URL for a given path
+   * @param {string} path - The path to localize
+   * @param {string} langCode - Optional language code (defaults to current)
+   * @returns {string} Localized URL
+   */
+  getLocalizedURL(path = '/', langCode = null) {
+    if (!this.router) return path;
+    return this.router.getLocalizedURL(path, langCode || this.currentLanguage);
+  }
+
+  /**
+   * Get clean path without language prefix
+   * @returns {string} Clean path
+   */
+  getCleanPath() {
+    if (!this.router) return window.location.pathname;
+    return this.router.getCleanPath();
+  }
+
+  /**
+   * Check if current path matches a pattern
+   * @param {string} pattern - Pattern to match against
+   * @returns {boolean} Whether path matches pattern
+   */
+  matchesRoute(pattern) {
+    if (!this.router) return false;
+    return this.router.matchesRoute(pattern);
+  }
+
+  /**
+   * Generate hreflang links for current page
+   * @returns {Array} Array of hreflang link objects
+   */
+  getHreflangLinks() {
+    if (!this.router) return [];
+    return this.router.generateHreflangLinks();
+  }
+
+  /**
+   * Get router instance for advanced usage
+   * @returns {LanguageRouter|null} Router instance
+   */
+  getRouter() {
+    return this.router;
+  }
+
+  /**
+   * Get current language with router information
+   * @returns {Object} Enhanced current language information
+   */
+  getCurrentLanguageExtended() {
+    const baseInfo = this.getCurrentLanguage();
+    const routerInfo = this.router ? this.router.getCurrentLanguage() : {};
+    
+    return {
+      ...baseInfo,
+      basePath: routerInfo.basePath || '',
+      cleanPath: this.getCleanPath(),
+      localizedURL: this.getLocalizedURL()
     };
   }
 }

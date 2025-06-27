@@ -1,0 +1,197 @@
+/**
+ * Japanese (日本語) Translations
+ * Complete translation file for the Decision Wheel Spinner application
+ * Includes all UI texts, messages, and SEO content
+ */
+
+export default {
+  // Application meta information for SEO
+  meta: {
+    title: '決定ルーレット - 簡単に決断を下す',
+    description: '美しい決定ルーレットで簡単に決断を下しましょう。選択肢を追加してルーレットを回し、ランダムな結果を得られます。',
+    keywords: 'ルーレット, 決定, ランダム, 選択, オプション, 回転, 決める',
+    ogTitle: '決定ルーレット - 簡単に決断を下す',
+    ogDescription: '美しい決定ルーレットで簡単に決断を下しましょう。決められない時に最適です！',
+    twitterTitle: '決定ルーレット - 簡単に決断を下す',
+    twitterDescription: '美しい決定ルーレットで簡単に決断を下しましょう。'
+  },
+
+  // Main application header
+  header: {
+    title: '決定ルーレット',
+    subtitle: '選択肢を追加して回転して決めましょう！',
+    iconAlt: 'ルーレットアイコン'
+  },
+
+  // Input section for adding options
+  input: {
+    sectionTitle: '選択肢を追加',
+    placeholder: '選択肢を入力...',
+    addButton: '追加',
+    clearAllButton: 'すべてクリア',
+    maxOptionsReached: '最大制限の {{max}} 個の選択肢に達しました',
+    emptyOptionError: '有効な選択肢を入力してください',
+    duplicateOptionError: 'この選択肢は既に存在します',
+    optionTooLong: '選択肢が長すぎます（最大 {{max}} 文字）',
+    defaultOptions: [
+      '選択肢 1',
+      '選択肢 2',
+      '選択肢 3',
+      '選択肢 4'
+    ],
+    clearAllConfirmation: '本当にすべての {{count}} 個の選択肢を削除しますか？'
+  },
+
+  // Wheel section
+  wheel: {
+    spinButton: 'ルーレットを回す！',
+    spinningButton: '回転中...',
+    noOptionsMessage: 'ルーレットを回すには最低2つの選択肢を追加してください',
+    centerAlt: 'ルーレットの中心',
+    pointerAlt: 'ルーレットの針'
+  },
+
+  // Result modal
+  result: {
+    winnerTitle: '🎉 当選！ 🎉',
+    winnerPrefix: '結果は：',
+    closeButton: '閉じる',
+    spinAgainButton: 'もう一度回す',
+    celebrationMessages: [
+      'おめでとうございます！',
+      '素晴らしい選択！',
+      'これがあなたの答えです！',
+      '完璧！',
+      'すごい！'
+    ]
+  },
+
+  // Language selector
+  language: {
+    selectorTitle: '言語',
+    autoDetected: '自動検出',
+    changeLanguage: '言語を {{language}} に変更',
+    currentLanguage: '現在の言語：{{language}}',
+    languages: {
+      en: '英語',
+      es: 'スペイン語',
+      fr: 'フランス語',
+      pt: 'ポルトガル語',
+      de: 'ドイツ語',
+      zh: '中国語',
+      ja: '日本語',
+      ru: 'ロシア語'
+    }
+  },
+
+  // Options management
+  options: {
+    deleteOption: '選択肢を削除：{{option}}',
+    editOption: '選択肢を編集：{{option}}',
+    optionNumber: '選択肢 {{number}}',
+    totalOptions: '合計 {{count}} 個の選択肢',
+    noOptions: '選択肢が追加されていません',
+    noOptionsYet: 'まだ選択肢が追加されていません。いくつかの選択肢を追加して始めましょう！',
+    noOptionsWheel: '選択肢が追加されていません',
+    noOptionsWheelDesc: 'いくつかの選択肢を追加して決定ルーレットを始めましょう！',
+    saveEdit: '保存',
+    cancelEdit: 'キャンセル',
+    editButton: '選択肢を編集',
+    removeButton: '選択肢を削除',
+    saveEditButton: '変更を保存',
+    cancelEditButton: '編集をキャンセル'
+  },
+
+  // Wheel history
+  history: {
+    title: '結果履歴',
+    button: '履歴',
+    noHistory: '回転履歴がありません',
+    lastResult: '最後の結果：{{result}}',
+    clearHistory: '履歴をクリア',
+    resultNumber: '結果 #{{number}}',
+    timeAgo: '{{time}}前'
+  },
+
+  // Error messages
+  errors: {
+    loadingTranslations: '翻訳の読み込みエラー',
+    wheelSpinError: 'ルーレット回転エラー',
+    saveOptionsError: '選択肢の保存エラー',
+    loadOptionsError: '選択肢の読み込みエラー',
+    genericError: '予期しないエラーが発生しました',
+    networkError: 'ネットワークエラー。インターネット接続を確認してください。',
+    storageError: 'ローカルストレージへのアクセスエラー'
+  },
+
+  // Success messages
+  success: {
+    optionAdded: '選択肢が正常に追加されました',
+    optionDeleted: '選択肢が正常に削除されました',
+    optionEdited: '更新されました："{{oldText}}" → "{{newText}}"',
+    optionsCleared: 'すべての選択肢がクリアされました',
+    languageChanged: '言語が {{language}} に変更されました',
+    historyCleared: '履歴が正常にクリアされました',
+    historyLoaded: 'ルーレット設定が読み込まれました！'
+  },
+
+  // Accessibility labels
+  accessibility: {
+    spinButton: 'ルーレットを回すボタン',
+    addOptionButton: '新しい選択肢を追加するボタン',
+    deleteOptionButton: 'この選択肢を削除するボタン',
+    optionInput: '新しい選択肢を入力するテキストフィールド',
+    wheelCanvas: 'インタラクティブルーレットキャンバス',
+    languageSelector: '言語セレクター',
+    closeModal: '結果ウィンドウを閉じる',
+    optionsList: '追加された選択肢のリスト'
+  },
+
+  // Time formatting
+  time: {
+    now: '今',
+    secondsAgo: '{{count}} 秒',
+    secondsAgo_plural: '{{count}} 秒',
+    minutesAgo: '{{count}} 分',
+    minutesAgo_plural: '{{count}} 分',
+    hoursAgo: '{{count}} 時間',
+    hoursAgo_plural: '{{count}} 時間',
+    daysAgo: '{{count}} 日',
+    daysAgo_plural: '{{count}} 日'
+  },
+
+  // Loading states
+  loading: {
+    loadingApp: 'アプリケーションを読み込み中...',
+    loadingTranslations: '翻訳を読み込み中...',
+    spinning: 'ルーレットを回転中...',
+    savingOptions: '選択肢を保存中...',
+    loadingOptions: '選択肢を読み込み中...'
+  },
+
+  // Tooltips and help text
+  tooltips: {
+    addOption: 'ルーレットに新しい選択肢を追加',
+    deleteOption: 'ルーレットからこの選択肢を削除',
+    clearAll: 'ルーレットからすべての選択肢を削除',
+    spinWheel: 'ルーレットを回してランダムな結果を得る',
+    changeLanguage: 'アプリケーションの言語を変更',
+    wheelCenter: 'ルーレットの中心'
+  },
+
+  // Keyboard shortcuts
+  shortcuts: {
+    addOption: 'Enter キーを押して選択肢を追加',
+    spinWheel: 'スペースキーを押してルーレットを回す',
+    closeModal: 'Esc キーを押して閉じる'
+  },
+
+  // Validation messages
+  validation: {
+    required: 'このフィールドは必須です',
+    minLength: '最小 {{min}} 文字',
+    maxLength: '最大 {{max}} 文字',
+    invalidCharacters: '無効な文字が含まれています',
+    duplicateEntry: 'この項目は既に存在します'
+  }
+};
