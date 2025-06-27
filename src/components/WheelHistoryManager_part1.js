@@ -3,7 +3,7 @@
  * Manages history of wheel configurations and spin results
  * Provides functionality to save, load, and display previous wheels and results
  */
-import { HistoryUI } from './WheelHistoryManager_part2.js';
+import { HistoryUIManager } from './WheelHistoryManager_part2.js';
 
 export class WheelHistoryManager {
   constructor(languageManager = null) {
@@ -13,10 +13,56 @@ export class WheelHistoryManager {
     this.isHistoryPanelOpen = false;
     
     // Initialize UI helper
-    this.ui = new HistoryUI(this);
+    this.ui = new HistoryUIManager(this);
     
     this.ui.initializeHistoryPanel();
     this.loadHistory();
+    this.setupLanguageListeners();
+  }
+
+  /**
+   * Setup language change listeners
+   */
+  setupLanguageListeners() {
+    if (this.languageManager) {
+      this.languageManager.addLanguageChangeListener(() => {
+        this.updateUITexts();
+      });
+    }
+  }
+
+  /**
+   * Update UI texts based on current language
+   */
+  updateUITexts() {
+    if (!this.languageManager) return;
+    
+    // Update history button text
+    const historyButton = document.getElementById('history-btn');
+    if (historyButton) {
+      const historyText = this.languageManager.t('history.historyButton');
+      const buttonSpan = historyButton.querySelector('span');
+      if (buttonSpan) {
+        buttonSpan.textContent = historyText;
+      }
+    }
+    
+    // Update panel texts
+    const panelTitle = document.querySelector('#history-panel .history-header h3');
+    if (panelTitle) {
+      panelTitle.textContent = this.languageManager.t('history.title');
+    }
+    
+    const clearButton = document.getElementById('clear-history');
+    if (clearButton) {
+      clearButton.textContent = this.languageManager.t('history.clearHistory');
+    }
+    
+    // Update empty state message if visible
+    const emptyState = document.querySelector('.history-empty');
+    if (emptyState) {
+      emptyState.textContent = this.languageManager.t('history.noHistory');
+    }
   }
 
   /**

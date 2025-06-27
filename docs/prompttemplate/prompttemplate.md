@@ -1,11 +1,8 @@
 [PROMPT TEMPLATE PARA CLAUDE - REGLA ÚNICA DE 250 LÍNEAS]
 
 Aspectos a mejorar:
-1) Al inciar la web app la ruleta no es visible hasta que se edita, se añade o se elimina una de las opciones.
-2) Quiero que la ruleta se vea más grande y los textos de la ruleta se van más grandes.
-3) Quiero que añadas animaciones al añadir o eliminar opciones (NO usar framer motion).
-4) En el modal de la opcion ganadora seleccionada hay que cambiar el fondo del container del texto ya que la legibilidad no es muy buena del texto.
-5) Quiero que se guarden en cookies o localhost un historial de ruletas creadas en un margen (adapta este margen o como acceder a este historial en el diseño responsive)
+1) Hay que cambiar los tags meta de seo y de compartir en redes sociales para que el nombre de la app sea Random Choice Wheel y randomchoicewheel.com
+2) No quiero que exista límite de longitud en el texto de las opciones, quiero que se pueda escribir hasta un libro si hace falta como opcion
 
 
 %%% FLUJO DE TRABAJO AUTOMÁTICO %%%

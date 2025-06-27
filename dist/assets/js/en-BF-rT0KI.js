@@ -73,6 +73,8 @@ export default {
     changeLanguage: 'Change language to {{language}}',
     currentLanguage: 'Current language: {{language}}',
     searchPlaceholder: 'Search languages...',
+    mostPopularLanguages: 'MOST POPULAR LANGUAGES',
+    popularTag: 'POPULAR',
     tierNames: {
       mostPopular: 'Most Popular Languages',
       regional: 'Regional Languages',
@@ -113,6 +115,7 @@ export default {
   history: {
     title: 'Results History',
     button: 'History',
+    historyButton: 'History',
     noHistory: 'No spin history',
     lastResult: 'Last result: {{result}}',
     clearHistory: 'Clear History',

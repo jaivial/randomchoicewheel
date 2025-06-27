@@ -270,7 +270,8 @@ export class LanguageSelector {
     if (info.tier === 1) {
       const priorityBadge = document.createElement('span');
       priorityBadge.className = 'language-priority-badge';
-      priorityBadge.textContent = 'Popular';
+      priorityBadge.textContent = this.languageManager.t ? 
+        this.languageManager.t('language.popularTag') : 'Popular';
       priorityBadge.setAttribute('aria-hidden', 'true');
       option.appendChild(priorityBadge);
     }
@@ -670,6 +671,20 @@ export class LanguageSelector {
       if (modalTitle && this.languageManager.t) {
         modalTitle.textContent = this.languageManager.t('language.selectorTitle') || 'Select Language';
       }
+      
+      // Update tier headers with translations
+      this.updateTierHeaders();
+      
+      // Update search placeholder
+      const searchInput = this.modalContent.querySelector('.language-search-input');
+      if (searchInput && this.languageManager.t) {
+        const placeholder = this.languageManager.t('language.searchPlaceholder');
+        searchInput.placeholder = placeholder;
+        searchInput.setAttribute('aria-label', placeholder);
+      }
+      
+      // Update popular badges
+      this.updatePopularBadges();
     } else {
       // Fallback display when language info is not available yet
       console.warn('Language info not available, using fallback display');
@@ -681,6 +696,42 @@ export class LanguageSelector {
     }
   }
 
+  /**
+   * Update tier headers with current language translations
+   */
+  updateTierHeaders() {
+    if (!this.languageManager.t) return;
+    
+    const tierNames = {
+      1: this.languageManager.t('language.tierNames.mostPopular'),
+      2: this.languageManager.t('language.tierNames.regional'),
+      3: this.languageManager.t('language.tierNames.europeanAsian'),
+      4: this.languageManager.t('language.tierNames.additional')
+    };
+    
+    Object.entries(tierNames).forEach(([tier, name]) => {
+      const header = this.modalContent.querySelector(`.tier-${tier} .language-tier-header`);
+      if (header && name) {
+        header.textContent = name;
+      }
+    });
+  }
+  
+  /**
+   * Update popular badges with current language translation
+   */
+  updatePopularBadges() {
+    if (!this.languageManager.t) return;
+    
+    const popularText = this.languageManager.t('language.popularTag');
+    const badges = this.modalContent.querySelectorAll('.language-priority-badge');
+    badges.forEach(badge => {
+      if (popularText) {
+        badge.textContent = popularText;
+      }
+    });
+  }
+  
   /**
    * Update the selected option styling in modal
    * @param {string} selectedCode - Currently selected language code
