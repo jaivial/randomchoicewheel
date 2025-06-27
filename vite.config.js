@@ -8,8 +8,6 @@ export default defineConfig({
       output: {
         // Chunk splitting for better caching
         manualChunks: {
-          // Vendor chunks
-          confetti: ['canvas-confetti'],
           // Language chunks - split by language for lazy loading
           translations: [
             './src/i18n/translations/en.js',
