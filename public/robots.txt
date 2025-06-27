@@ -1,0 +1,76 @@
+# Robots.txt for Decision Wheel Spinner
+# Optimized for SEO and search engine crawling
+
+# Allow all user agents to crawl the site
+User-agent: *
+Allow: /
+
+# Specific allowances for important content
+Allow: /en
+Allow: /es  
+Allow: /fr
+Allow: /assets/
+Allow: /src/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.ico
+Allow: *.webp
+
+# Disallow any temporary or build files
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /package*.json
+Disallow: /vite.config.js
+Disallow: *.log
+
+# Sitemap location (will be generated)
+Sitemap: https://wheelspinner.app/sitemap.xml
+
+# Additional directives for major search engines
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Facebook (for social sharing)
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter (for social sharing)
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn (for social sharing)
+User-agent: LinkedInBot
+Allow: /
+
+# WhatsApp (for social sharing)
+User-agent: WhatsApp
+Allow: /

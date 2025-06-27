@@ -1,0 +1,714 @@
+/* Responsive Design System */
+
+/* Layout Components */
+header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.app-icon {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
+}
+
+header h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header p {
+  font-size: var(--font-size-lg);
+  opacity: 0.9;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: var(--spacing-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  align-items: start;
+}
+
+/* Input Section */
+#input-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+#input-section h2 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.input-group input[type="text"] {
+  background: var(--glass-bg);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: white;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-sm) var(--spacing-md);
+  outline: none;
+  transition: all var(--transition-base);
+  box-shadow: 
+    0 4px 15px 0 rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.input-group input[type="text"]:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.input-group input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 
+    0 4px 15px 0 rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.option-text {
+  flex: 1;
+  font-size: var(--font-size-base);
+}
+
+/* Option Action Buttons */
+.option-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.edit-option {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all var(--transition-fast);
+  min-width: 32px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(78, 205, 196, 0.3);
+}
+
+.remove-option {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all var(--transition-fast);
+  min-width: 32px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Edit Mode Styles */
+.edit-option-input {
+  flex: 1;
+  background: var(--glass-bg);
+  border: 2px solid rgba(78, 205, 196, 0.5);
+  border-radius: var(--radius-sm);
+  color: white;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  outline: none;
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.edit-option-input:focus {
+  border-color: rgba(78, 205, 196, 0.8);
+  box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2);
+}
+
+.edit-option-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.edit-controls {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+}
+
+.save-edit {
+  background: linear-gradient(135deg, #2ed573 0%, #17a2b8 100%);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all var(--transition-fast);
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-edit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(46, 213, 115, 0.3);
+}
+
+.cancel-edit {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  transition: all var(--transition-fast);
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cancel-edit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Wheel Section */
+.wheel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  min-height: 500px;
+}
+
+.wheel-spinner {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.wheel-svg {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-slow);
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid white;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  z-index: 10;
+}
+
+.wheel-center {
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.spin-button {
+  font-size: var(--font-size-lg);
+  padding: var(--spacing-md) var(--spacing-2xl);
+  min-width: 200px;
+}
+
+/* Winner Display */
+.winner-display {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background: var(--accent-gradient);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(79, 172, 254, 0.3);
+}
+
+/* Desktop Layout Optimizations */
+@media (min-width: 769px) {
+  .main-container {
+    grid-template-columns: 500px 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+  
+  #input-section {
+    position: sticky;
+    top: var(--spacing-lg);
+    max-height: calc(100vh - 2 * var(--spacing-lg));
+    overflow-y: auto;
+  }
+  
+  .wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: var(--spacing-xl);
+  }
+  
+  .wheel-spinner {
+    width: 550px;
+    height: 550px;
+  }
+  
+  /* Hide sidebar ads in desktop since wheel takes that space */
+  .ad-sidebar,
+  .sidebar {
+    display: none !important;
+  }
+}
+
+/* Large Desktop Optimizations */
+@media (min-width: 1200px) {
+  .main-container {
+    grid-template-columns: 550px 1fr;
+    max-width: 1600px;
+  }
+  
+  .wheel-spinner {
+    width: 650px;
+    height: 650px;
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .wheel-spinner {
+    width: 550px;
+    height: 550px;
+  }
+  
+  header h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .input-group .glass-btn {
+    align-self: stretch;
+  }
+  
+  /* Mobile responsive for edit buttons */
+  .option-buttons {
+    gap: var(--spacing-xs);
+  }
+  
+  .edit-option,
+  .remove-option {
+    min-width: 28px;
+    height: 24px;
+    font-size: 12px;
+    padding: var(--spacing-xs);
+  }
+  
+  .edit-controls {
+    gap: var(--spacing-xs);
+  }
+  
+  .save-edit,
+  .cancel-edit {
+    min-width: 24px;
+    height: 24px;
+    font-size: 12px;
+    padding: var(--spacing-xs);
+  }
+  
+  /* Winner Modal - Tablet Responsive */
+  .modal-overlay {
+    padding: var(--spacing-lg);
+  }
+  
+  .modal-content {
+    max-width: 500px;
+    width: 90%;
+    padding: var(--spacing-xl);
+  }
+  
+  .modal-content h2 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-xl);
+    padding: 0 var(--spacing-md);
+  }
+  
+  .winner-display {
+    font-size: var(--font-size-2xl);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-xl) 0;
+    border-radius: var(--radius-xl);
+  }
+  
+  .modal-content .glass-btn {
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    font-size: var(--font-size-lg);
+    margin: var(--spacing-sm) var(--spacing-md);
+    min-width: 180px;
+    width: auto;
+    flex: 1;
+    max-width: 220px;
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  #app {
+    padding: var(--spacing-xl) var(--spacing-md);
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+  }
+  
+  .glass-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .wheel-spinner {
+    width: calc(100vw - 2rem);
+    max-width: 550px;
+    height: calc(100vw - 2rem);
+    max-height: 550px;
+  }
+  
+  header h1 {
+    font-size: var(--font-size-xl);
+  }
+  
+  header p {
+    font-size: var(--font-size-base);
+  }
+  
+  .spin-button {
+    min-width: 150px;
+    font-size: var(--font-size-base);
+  }
+  
+  .winner-display {
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-md);
+  }
+  
+  .modal-overlay {
+    padding: var(--spacing-md);
+  }
+  
+  /* Winner Modal - Mobile Responsive */
+  .modal-content {
+    max-width: calc(100vw - 2rem);
+    width: 95%;
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+  }
+  
+  .modal-content h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+    padding: 0;
+    line-height: 1.2;
+  }
+  
+  .winner-display {
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    border-radius: var(--radius-lg);
+    word-break: break-word;
+  }
+  
+  .modal-content .glass-btn {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+    margin: var(--spacing-sm) var(--spacing-xs);
+    min-width: 160px;
+    width: auto;
+    border-radius: var(--radius-lg);
+    flex: 1;
+    max-width: 200px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .modal-content > button {
+    width: 100%;
+    max-width: 280px;
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+  }
+  
+  /* Fallback styling for mobile */
+  .wheel-fallback {
+    max-width: calc(100vw - 2rem) !important;
+    width: 95vw !important;
+    padding: 1.5rem !important;
+  }
+  
+  .wheel-fallback h3 {
+    font-size: var(--font-size-lg) !important;
+  }
+  
+  .wheel-fallback p {
+    font-size: var(--font-size-sm) !important;
+  }
+}
+
+/* Extra Small Mobile Styles */
+@media (max-width: 360px) {
+  .modal-content {
+    max-width: calc(100vw - 1rem);
+    width: 98%;
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm) auto;
+  }
+  
+  .modal-content h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.1;
+  }
+  
+  .winner-display {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+  }
+  
+  .modal-content .glass-btn {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    font-size: var(--font-size-base);
+    margin: var(--spacing-sm) 0;
+    min-width: 140px;
+    width: 100%;
+    max-width: 240px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+  
+  .modal-overlay {
+    padding: var(--spacing-sm);
+  }
+  
+  /* Extra small mobile - edit buttons */
+  .edit-option,
+  .remove-option,
+  .save-edit,
+  .cancel-edit {
+    min-width: 20px;
+    height: 20px;
+    font-size: 10px;
+    padding: 2px;
+  }
+  
+  .option-buttons,
+  .edit-controls {
+    gap: 2px;
+  }
+}
+
+/* Modal Button Layout Improvements */
+@media (max-width: 768px) {
+  .modal-content {
+    gap: var(--spacing-md);
+  }
+  
+  .modal-content > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+  }
+  
+  /* Enhanced button container for better spacing */
+  .modal-content {
+    padding-bottom: var(--spacing-2xl);
+  }
+  
+  /* Ensure buttons are prominently sized */
+  .modal-content .glass-btn {
+    min-height: 50px;
+    box-shadow: 
+      0 6px 20px 0 var(--glass-shadow),
+      0 2px 10px 0 rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content > div:last-child {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  /* Stack buttons with more spacing on mobile */
+  .modal-content {
+    padding-bottom: var(--spacing-2xl);
+  }
+  
+  /* Enhanced mobile button styling */
+  .modal-content .glass-btn {
+    min-height: 55px;
+    transform: none;
+    box-shadow: 
+      0 8px 25px 0 var(--glass-shadow),
+      0 4px 15px 0 rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+  
+  .modal-content .glass-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* Disable hover effects on touch devices to prevent sticky hover states */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects for all buttons on touch devices */
+  .glass-btn:hover,
+  .spin-button:hover,
+  #spin-btn:hover,
+  .edit-option:hover,
+  .remove-option:hover,
+  .save-edit:hover,
+  .cancel-edit:hover,
+  .close-btn:hover,
+  .confirmation-cancel:hover,
+  .confirmation-confirm:hover,
+  .history-button:hover,
+  .history-item:hover,
+  .modal-content .glass-btn:hover,
+  #spin-again-btn:hover,
+  #close-modal-btn:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+    background: inherit !important;
+    border-color: inherit !important;
+    scale: none !important;
+  }
+  
+  /* Disable hover transitions on touch devices */
+  .glass-btn,
+  .spin-button,
+  #spin-btn,
+  .edit-option,
+  .remove-option,
+  .save-edit,
+  .cancel-edit,
+  .close-btn,
+  .confirmation-cancel,
+  .confirmation-confirm,
+  .history-button,
+  .history-item,
+  .modal-content .glass-btn,
+  #spin-again-btn,
+  #close-modal-btn {
+    transition: none !important;
+  }
+  
+  /* Active states for touch feedback instead of hover */
+  .glass-btn:active,
+  .spin-button:active,
+  #spin-btn:active,
+  .edit-option:active,
+  .remove-option:active,
+  .save-edit:active,
+  .cancel-edit:active,
+  #spin-again-btn:active,
+  #close-modal-btn:active {
+    transform: scale(0.98) !important;
+    opacity: 0.8 !important;
+  }
+}

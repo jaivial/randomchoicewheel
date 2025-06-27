@@ -1,0 +1,392 @@
+/**
+ * Advertisement Styling - Glassmorphism Theme Integration
+ * Responsive ad layouts with glassmorphism design elements
+ * Supports multiple ad placements and sizes
+ */
+
+/* Ad Container Base Styles */
+.ad-container {
+  /* Glassmorphism styling for ad containers */
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+  
+  /* Layout and spacing */
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-sm);
+  text-align: center;
+  
+  /* Smooth transitions */
+  transition: all var(--transition-base);
+  
+  /* Ensure proper stacking */
+  position: relative;
+  z-index: 1;
+}
+
+.ad-container:hover {
+  background: var(--glass-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px var(--glass-shadow);
+}
+
+/* Header Ad Placement */
+.ad-header {
+  margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  border-radius: var(--radius-md);
+}
+
+.ad-header .adsbygoogle {
+  width: 100%;
+  max-width: 728px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+/* Sidebar Ad Placement */
+.sidebar {
+  position: fixed;
+  right: var(--spacing-lg);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  z-index: var(--z-dropdown);
+}
+
+.ad-sidebar {
+  margin: var(--spacing-md) 0;
+  width: 100%;
+}
+
+.ad-sidebar .adsbygoogle {
+  width: 300px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* Content Ad Placement */
+.ad-content {
+  margin: var(--spacing-xl) auto;
+  max-width: 500px;
+  grid-column: 1 / -1; /* Span full width in grid layout */
+  text-align: center;
+}
+
+.ad-content .adsbygoogle {
+  width: 100%;
+  max-width: 320px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+/* Footer Ad Placement */
+.ad-footer {
+  margin: var(--spacing-xl) 0 var(--spacing-md) 0;
+  border-radius: var(--radius-md);
+}
+
+.ad-footer .adsbygoogle {
+  width: 100%;
+  max-width: 728px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+/* Wheel Bottom Ad Placement */
+.ad-wheel-bottom {
+  margin: var(--spacing-xl) 0;
+  max-width: 300px;
+}
+
+.ad-wheel-bottom .adsbygoogle {
+  width: 300px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* After Wheel Ad Placements */
+.ad-after-wheel-1 {
+  margin: var(--spacing-2xl) auto;
+  max-width: 728px;
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.ad-after-wheel-1 .adsbygoogle {
+  width: 100%;
+  max-width: 728px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+.ad-after-wheel-2 {
+  margin: var(--spacing-2xl) auto;
+  max-width: 300px;
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.ad-after-wheel-2 .adsbygoogle {
+  width: 300px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+/* Ad Blocker Detection Message */
+.ad-blocker-message {
+  background: linear-gradient(135deg, rgba(255, 87, 87, 0.2) 0%, rgba(255, 154, 0, 0.2) 100%);
+  border: 1px solid rgba(255, 87, 87, 0.3);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.ad-blocker-message h3 {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+.ad-blocker-message p {
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Fallback Ad Content */
+.ad-fallback {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* AdSense Unit Styling */
+.adsbygoogle {
+  display: block !important;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Loading Animation for Ads */
+.ad-container.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: adSpinner 1s linear infinite;
+}
+
+@keyframes adSpinner {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Responsive Design - Tablet and Small Desktop */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    margin: var(--spacing-lg) 0;
+  }
+  
+  .ad-sidebar {
+    max-width: 300px;
+    margin: 0 auto var(--spacing-lg) auto;
+  }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  /* Hide sidebar and wheel-bottom ads on mobile */
+  .ad-sidebar,
+  .sidebar,
+  .ad-wheel-bottom {
+    display: none !important;
+  }
+  
+  /* Adjust header ads for mobile */
+  .ad-header .adsbygoogle {
+    width: 100%;
+    max-width: 320px;
+    height: 50px;
+  }
+  
+  /* Adjust footer ads for mobile */
+  .ad-footer .adsbygoogle {
+    width: 100%;
+    max-width: 320px;
+    height: 50px;
+  }
+  
+  /* Adjust after-wheel ads for mobile */
+  .ad-after-wheel-1 .adsbygoogle {
+    width: 100%;
+    max-width: 320px;
+    height: 50px;
+  }
+  
+  .ad-after-wheel-2 .adsbygoogle {
+    width: 100%;
+    max-width: 320px;
+    height: 100px;
+  }
+  
+  /* Content ads remain the same size */
+  .ad-content .adsbygoogle {
+    width: 100%;
+    max-width: 320px;
+    height: 100px;
+  }
+  
+  /* Smaller container margins */
+  .ad-container {
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-xs);
+  }
+  
+  /* Adjust ad blocker message */
+  .ad-blocker-message {
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+  }
+  
+  .ad-blocker-message h3 {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Small Mobile Optimization */
+@media (max-width: 480px) {
+  .ad-container {
+    border-radius: var(--radius-sm);
+  }
+  
+  .ad-header,
+  .ad-footer {
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .ad-content {
+    margin: var(--spacing-md) auto;
+  }
+}
+
+/* Dark Mode Support (if implemented) */
+@media (prefers-color-scheme: dark) {
+  .ad-container {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .ad-fallback {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .ad-container {
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .ad-blocker-message {
+    border-width: 2px;
+    border-color: rgba(255, 87, 87, 0.8);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .ad-container {
+    transition: none;
+  }
+  
+  .ad-container:hover {
+    transform: none;
+  }
+  
+  @keyframes adSpinner {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+  }
+}
+
+/* Print Styles - Hide Ads */
+@media print {
+  .ad-container,
+  .ad-blocker-message,
+  .sidebar {
+    display: none !important;
+  }
+}
+
+/* Focus and Accessibility */
+.ad-container:focus-within {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Performance Optimization */
+.ad-container {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Sticky Ad Positioning (Optional) */
+.ad-sticky {
+  position: sticky;
+  top: var(--spacing-lg);
+  z-index: var(--z-dropdown);
+}
+
+/* Ad Label Styling */
+.ad-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+}
+
+/* Ad Container Variants */
+.ad-container.compact {
+  padding: var(--spacing-xs);
+  margin: var(--spacing-sm) 0;
+}
+
+.ad-container.prominent {
+  padding: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  border-width: 2px;
+  box-shadow: 0 12px 48px var(--glass-shadow);
+}
