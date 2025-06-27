@@ -73,6 +73,8 @@ export default {
     changeLanguage: 'Sprache zu {{language}} ändern',
     currentLanguage: 'Aktuelle Sprache: {{language}}',
     searchPlaceholder: 'Sprachen suchen...',
+    mostPopularLanguages: 'BELIEBTESTE SPRACHEN',
+    popularTag: 'BELIEBT',
     tierNames: {
       mostPopular: 'Beliebteste Sprachen',
       regional: 'Regionale Sprachen',
@@ -113,6 +115,7 @@ export default {
   history: {
     title: 'Ergebnis-Verlauf',
     button: 'Verlauf',
+    historyButton: 'Verlauf',
     noHistory: 'Keine Drehhistorie',
     lastResult: 'Letztes Ergebnis: {{result}}',
     clearHistory: 'Verlauf löschen',

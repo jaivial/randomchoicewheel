@@ -73,6 +73,8 @@ export default {
     changeLanguage: 'Изменить язык на {{language}}',
     currentLanguage: 'Текущий язык: {{language}}',
     searchPlaceholder: 'Поиск языков...',
+    mostPopularLanguages: 'САМЫЕ ПОПУЛЯРНЫЕ ЯЗЫКИ',
+    popularTag: 'ПОПУЛЯРНЫЙ',
     tierNames: {
       mostPopular: 'Самые Популярные Языки',
       regional: 'Региональные Языки',
@@ -113,6 +115,7 @@ export default {
   history: {
     title: 'История Результатов',
     button: 'История',
+    historyButton: 'История',
     noHistory: 'Нет истории вращений',
     lastResult: 'Последний результат: {{result}}',
     clearHistory: 'Очистить Историю',

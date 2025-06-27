@@ -73,6 +73,8 @@ export default {
     changeLanguage: 'Mudar idioma para {{language}}',
     currentLanguage: 'Idioma atual: {{language}}',
     searchPlaceholder: 'Pesquisar idiomas...',
+    mostPopularLanguages: 'IDIOMAS MAIS POPULARES',
+    popularTag: 'POPULAR',
     tierNames: {
       mostPopular: 'Idiomas Mais Populares',
       regional: 'Idiomas Regionais',
@@ -113,6 +115,7 @@ export default {
   history: {
     title: 'Histórico de Resultados',
     button: 'Histórico',
+    historyButton: 'Histórico',
     noHistory: 'Nenhum histórico de giros',
     lastResult: 'Último resultado: {{result}}',
     clearHistory: 'Limpar Histórico',

@@ -73,6 +73,8 @@ export default {
     changeLanguage: '언어를 {{language}}로 변경',
     currentLanguage: '현재 언어: {{language}}',
     searchPlaceholder: '언어 검색...',
+    mostPopularLanguages: '가장 인기 있는 언어',
+    popularTag: '인기',
     tierNames: {
       mostPopular: '가장 인기 있는 언어',
       regional: '지역 언어',
@@ -146,6 +148,7 @@ export default {
   history: {
     title: '결과 기록',
     button: '기록',
+    historyButton: '기록',
     noHistory: '회전 기록 없음',
     lastResult: '마지막 결과: {{result}}',
     clearHistory: '기록 삭제',

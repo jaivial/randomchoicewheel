@@ -73,6 +73,8 @@ export default {
     changeLanguage: '言語を {{language}} に変更',
     currentLanguage: '現在の言語：{{language}}',
     searchPlaceholder: '言語を検索...',
+    mostPopularLanguages: '最も人気の言語',
+    popularTag: '人気',
     tierNames: {
       mostPopular: '最も人気の言語',
       regional: '地域言語',
@@ -113,6 +115,7 @@ export default {
   history: {
     title: '結果履歴',
     button: '履歴',
+    historyButton: '履歴',
     noHistory: '回転履歴がありません',
     lastResult: '最後の結果：{{result}}',
     clearHistory: '履歴をクリア',

@@ -73,6 +73,8 @@ export default {
     changeLanguage: 'भाषा को {{language}} में बदलें',
     currentLanguage: 'वर्तमान भाषा: {{language}}',
     searchPlaceholder: 'भाषाओं को खोजें...',
+    mostPopularLanguages: 'सबसे लोकप्रिय भाषाएं',
+    popularTag: 'लोकप्रिय',
     tierNames: {
       mostPopular: 'सबसे लोकप्रिय भाषाएं',
       regional: 'क्षेत्रीय भाषाएं',
@@ -146,6 +148,7 @@ export default {
   history: {
     title: 'परिणामों का इतिहास',
     button: 'इतिहास',
+    historyButton: 'इतिहास',
     noHistory: 'कोई स्पिन इतिहास नहीं',
     lastResult: 'अंतिम परिणाम: {{result}}',
     clearHistory: 'इतिहास साफ़ करें',

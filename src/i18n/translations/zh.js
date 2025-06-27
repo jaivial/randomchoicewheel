@@ -73,6 +73,8 @@ export default {
     changeLanguage: '更改语言为 {{language}}',
     currentLanguage: '当前语言：{{language}}',
     searchPlaceholder: '搜索语言...',
+    mostPopularLanguages: '最受欢迎的语言',
+    popularTag: '热门',
     tierNames: {
       mostPopular: '最受欢迎的语言',
       regional: '地区语言',
@@ -113,6 +115,7 @@ export default {
   history: {
     title: '结果历史',
     button: '历史',
+    historyButton: '历史',
     noHistory: '无旋转历史',
     lastResult: '最后结果：{{result}}',
     clearHistory: '清除历史',

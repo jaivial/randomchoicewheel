@@ -74,6 +74,8 @@ export default {
     changeLanguage: 'تغيير اللغة إلى {{language}}',
     currentLanguage: 'اللغة الحالية: {{language}}',
     searchPlaceholder: 'البحث عن اللغات...',
+    mostPopularLanguages: 'اللغات الأكثر شعبية',
+    popularTag: 'شائع',
     tierNames: {
       mostPopular: 'اللغات الأكثر شعبية',
       regional: 'اللغات الإقليمية',
@@ -147,6 +149,7 @@ export default {
   history: {
     title: 'تاريخ النتائج',
     button: 'التاريخ',
+    historyButton: 'التاريخ',
     noHistory: 'لا يوجد تاريخ دوران',
     lastResult: 'آخر نتيجة: {{result}}',
     clearHistory: 'مسح التاريخ',
