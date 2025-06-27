@@ -186,9 +186,12 @@ export class LanguageSelector {
     
     const searchInput = document.createElement('input');
     searchInput.type = 'text';
-    searchInput.placeholder = 'Search languages...';
+    const searchPlaceholder = this.languageManager.t ? 
+      this.languageManager.t('language.searchPlaceholder') : 
+      'Search languages...';
+    searchInput.placeholder = searchPlaceholder;
     searchInput.className = 'language-search-input';
-    searchInput.setAttribute('aria-label', 'Search languages');
+    searchInput.setAttribute('aria-label', searchPlaceholder);
     
     searchContainer.appendChild(searchInput);
     modalBody.appendChild(searchContainer);
@@ -249,15 +252,10 @@ export class LanguageSelector {
     nativeName.className = 'language-native-name';
     nativeName.textContent = info.nativeName;
     
-    // English name with speaker count for tier 1 languages
+    // English name without speaker count
     const englishName = document.createElement('span');
     englishName.className = 'language-english-name';
-    if (info.tier === 1 && info.speakers) {
-      const speakerCount = this.formatSpeakerCount(info.speakers);
-      englishName.textContent = `${info.name} (${speakerCount})`;
-    } else {
-      englishName.textContent = info.name;
-    }
+    englishName.textContent = info.name;
     
     infoContainer.appendChild(nativeName);
     infoContainer.appendChild(englishName);
@@ -284,21 +282,6 @@ export class LanguageSelector {
     return option;
   }
 
-  /**
-   * Format speaker count for display
-   * @param {number} speakers - Number of speakers
-   * @returns {string} Formatted speaker count
-   */
-  formatSpeakerCount(speakers) {
-    if (speakers >= 1000000000) {
-      return `${(speakers / 1000000000).toFixed(1)}B`;
-    } else if (speakers >= 1000000) {
-      return `${Math.round(speakers / 1000000)}M`;
-    } else if (speakers >= 1000) {
-      return `${Math.round(speakers / 1000)}K`;
-    }
-    return speakers.toString();
-  }
 
   /**
    * Organize languages by tier for better UX
@@ -328,10 +311,10 @@ export class LanguageSelector {
    */
   createTierSections(modalBody, languagesByTier) {
     const tierNames = {
-      1: 'Most Popular Languages',
-      2: 'Regional Languages',
-      3: 'European & Asian Languages',
-      4: 'Additional Languages'
+      1: this.languageManager.t ? this.languageManager.t('language.tierNames.mostPopular') : 'Most Popular Languages',
+      2: this.languageManager.t ? this.languageManager.t('language.tierNames.regional') : 'Regional Languages',
+      3: this.languageManager.t ? this.languageManager.t('language.tierNames.europeanAsian') : 'European & Asian Languages',
+      4: this.languageManager.t ? this.languageManager.t('language.tierNames.additional') : 'Additional Languages'
     };
 
     Object.entries(languagesByTier).forEach(([tier, languages]) => {

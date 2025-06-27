@@ -72,6 +72,13 @@ export default {
     autoDetected: 'Auto-detected',
     changeLanguage: 'Change language to {{language}}',
     currentLanguage: 'Current language: {{language}}',
+    searchPlaceholder: 'Search languages...',
+    tierNames: {
+      mostPopular: 'Most Popular Languages',
+      regional: 'Regional Languages',
+      europeanAsian: 'European & Asian Languages',
+      additional: 'Additional Languages'
+    },
     languages: {
       en: 'English',
       es: 'Spanish',

@@ -191,30 +191,39 @@ export class HistoryUI {
       }
       
       @media (max-width: 480px) {
-        .history-panel {
+        .history-panel,
+        .history-panel.open,
+        .history-panel.hidden {
           position: fixed !important;
           top: 50% !important;
           left: 50% !important;
           right: auto !important;
-          transform: translate(-50%, -50%) !important;
           width: calc(100vw - 20px) !important;
           max-width: 350px !important;
           height: 80vh !important;
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out;
+          transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out !important;
         }
         
-        .history-panel.hidden {
+        .history-panel {
+          transform: translate(-50%, -50%) scale(0.9) !important;
           opacity: 0 !important;
           visibility: hidden !important;
-          transform: translate(-50%, -50%) scale(0.9) !important;
+          pointer-events: none !important;
         }
         
         .history-panel.open {
+          transform: translate(-50%, -50%) scale(1) !important;
           opacity: 1 !important;
           visibility: visible !important;
-          transform: translate(-50%, -50%) scale(1) !important;
+          pointer-events: auto !important;
+        }
+        
+        .history-panel.hidden {
+          transform: translate(-50%, -50%) scale(0.9) !important;
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+          display: none !important;
         }
       }
       

@@ -73,6 +73,13 @@ export default {
     autoDetected: 'تم اكتشافها تلقائياً',
     changeLanguage: 'تغيير اللغة إلى {{language}}',
     currentLanguage: 'اللغة الحالية: {{language}}',
+    searchPlaceholder: 'البحث عن اللغات...',
+    tierNames: {
+      mostPopular: 'اللغات الأكثر شعبية',
+      regional: 'اللغات الإقليمية',
+      europeanAsian: 'اللغات الأوروبية والآسيوية',
+      additional: 'لغات إضافية'
+    },
     languages: {
       en: 'الإنجليزية',
       zh: 'الصينية',

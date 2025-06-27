@@ -72,6 +72,13 @@ export default {
     autoDetected: 'Automatisch erkannt',
     changeLanguage: 'Sprache zu {{language}} ändern',
     currentLanguage: 'Aktuelle Sprache: {{language}}',
+    searchPlaceholder: 'Sprachen suchen...',
+    tierNames: {
+      mostPopular: 'Beliebteste Sprachen',
+      regional: 'Regionale Sprachen',
+      europeanAsian: 'Europäische und Asiatische Sprachen',
+      additional: 'Zusätzliche Sprachen'
+    },
     languages: {
       en: 'Englisch',
       es: 'Spanisch',

@@ -72,6 +72,13 @@ export default {
     autoDetected: '자동 감지됨',
     changeLanguage: '언어를 {{language}}로 변경',
     currentLanguage: '현재 언어: {{language}}',
+    searchPlaceholder: '언어 검색...',
+    tierNames: {
+      mostPopular: '가장 인기 있는 언어',
+      regional: '지역 언어',
+      europeanAsian: '유럽 및 아시아 언어',
+      additional: '추가 언어'
+    },
     languages: {
       en: '영어',
       zh: '중국어',

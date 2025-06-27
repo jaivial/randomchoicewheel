@@ -72,6 +72,13 @@ export default {
     autoDetected: '自动检测',
     changeLanguage: '更改语言为 {{language}}',
     currentLanguage: '当前语言：{{language}}',
+    searchPlaceholder: '搜索语言...',
+    tierNames: {
+      mostPopular: '最受欢迎的语言',
+      regional: '地区语言',
+      europeanAsian: '欧洲和亚洲语言',
+      additional: '附加语言'
+    },
     languages: {
       en: '英语',
       es: '西班牙语',

@@ -72,6 +72,13 @@ export default {
     autoDetected: '自動検出',
     changeLanguage: '言語を {{language}} に変更',
     currentLanguage: '現在の言語：{{language}}',
+    searchPlaceholder: '言語を検索...',
+    tierNames: {
+      mostPopular: '最も人気の言語',
+      regional: '地域言語',
+      europeanAsian: 'ヨーロッパ・アジア言語',
+      additional: 'その他の言語'
+    },
     languages: {
       en: '英語',
       es: 'スペイン語',

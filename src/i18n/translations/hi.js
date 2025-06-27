@@ -72,6 +72,13 @@ export default {
     autoDetected: 'स्वचालित रूप से पहचानी गई',
     changeLanguage: 'भाषा को {{language}} में बदलें',
     currentLanguage: 'वर्तमान भाषा: {{language}}',
+    searchPlaceholder: 'भाषाओं को खोजें...',
+    tierNames: {
+      mostPopular: 'सबसे लोकप्रिय भाषाएं',
+      regional: 'क्षेत्रीय भाषाएं',
+      europeanAsian: 'यूरोपीय और एशियाई भाषाएं',
+      additional: 'अतिरिक्त भाषाएं'
+    },
     languages: {
       en: 'अंग्रेजी',
       zh: 'चीनी',
