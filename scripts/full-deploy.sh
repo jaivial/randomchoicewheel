@@ -260,7 +260,7 @@ post_deployment_verification() {
     
     # Test SEO files
     log "INFO" "Testing SEO files..."
-    for file in robots.txt sitemap.xml manifest.json; do
+    for file in robots.txt sitemap.xml manifest.json ads.txt; do
         HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://$DOMAIN/$file" || echo "000")
         if [ "$HTTP_CODE" = "200" ]; then
             log "SUCCESS" "SEO file /$file is accessible"
