@@ -86,8 +86,8 @@ export default defineConfig({
     // e.g., sitemap generation, robots.txt generation, etc.
   ],
   
-  // Base configuration for deployment
-  base: './',
+  // Base configuration for deployment  
+  base: '/',
   
   // CSS optimization
   css: {
