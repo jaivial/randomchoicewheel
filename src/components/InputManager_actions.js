@@ -78,7 +78,7 @@ export class InputManagerActions {
     editInput.type = 'text';
     editInput.className = 'edit-option-input';
     editInput.value = currentText;
-    editInput.maxLength = this.manager.maxOptionLength;
+    // Remove maxLength restriction to allow unlimited text
     
     // Create edit control buttons
     const saveTooltip = this.manager.t('options.saveEditButton');

@@ -4,7 +4,7 @@
  * Manages component communication, global event handling, and internationalization
  */
 import { WheelSpinner } from './components/WheelSpinner_part1.js';
-import { InputManager } from './components/InputManager_core.js';
+import { InputManager } from './components/InputManager_core_part1.js';
 import { ResultModal } from './components/ResultModal_part1.js';
 import { ConfettiEffect } from './components/ConfettiEffect_part1.js';
 import { AppEventHandlers } from './main_part2.js';

@@ -1,17 +1,27 @@
 /**
- * InputManager Component - Core: Main Class and Essential Methods
- * Contains the main InputManager class with core functionality
+ * InputManager Component - Core Part 1: Main Class and Constructor
+ * Contains the main InputManager class initialization and core properties
  */
 import { InputManagerHelpers } from './InputManager_part2.js';
 import { InputManagerActions } from './InputManager_actions.js';
 import { ConfirmationModal } from './ConfirmationModal.js';
+import { InputManagerCore2 } from './InputManager_core_part2.js';
 
 export class InputManager {
+  // Delegate methods to core2 for rendering and management
+  renderOptions() { return this.core2.renderOptions(); }
+  updateClearButtonState() { return this.core2.updateClearButtonState(); }
+  clearInput() { return this.core2.clearInput(); }
+  saveOptions() { return this.core2.saveOptions(); }
+  loadSavedOptions() { return this.core2.loadSavedOptions(); }
+  notifyOptionsChanged() { return this.core2.notifyOptionsChanged(); }
+  getOptions() { return this.core2.getOptions(); }
+  setOptions(newOptions) { return this.core2.setOptions(newOptions); }
   constructor(languageManager = null) {
     this.options = [];
     this.maxOptions = 20;
     this.minOptionLength = 1;
-    this.maxOptionLength = 50;
+    this.maxOptionLength = Number.MAX_SAFE_INTEGER;
     
     // Language management
     this.languageManager = languageManager;
@@ -22,9 +32,10 @@ export class InputManager {
     this.clearButton = document.getElementById('clear-all-btn');
     this.optionsList = document.getElementById('options-list');
     
-    // Initialize helpers, actions, and confirmation modal
+    // Initialize helpers, actions, core2, and confirmation modal
     this.helpers = new InputManagerHelpers(this);
     this.actions = new InputManagerActions(this);
+    this.core2 = new InputManagerCore2(this);
     this.confirmationModal = new ConfirmationModal(this.languageManager);
     
     this.initializeEventListeners();
@@ -40,7 +51,7 @@ export class InputManager {
     if (this.languageManager) {
       this.languageManager.addLanguageChangeListener(() => {
         this.updateUITexts();
-        this.renderOptions(); // Re-render options with new language
+        this.core2.renderOptions(); // Re-render options with new language
         this.validateInput(); // Re-validate with new error messages
       });
     }
@@ -180,104 +191,5 @@ export class InputManager {
       addButton.disabled = false;
       this.helpers.clearInputError();
     }
-  }
-
-  /**
-   * Render the options list in the DOM with animations
-   */
-  renderOptions() {
-    if (!this.optionsList) return;
-    
-    this.optionsList.innerHTML = '';
-    
-    if (this.options.length === 0) {
-      this.helpers.renderEmptyState();
-      return;
-    }
-    
-    this.options.forEach((option, index) => {
-      const optionElement = this.helpers.createOptionElement(option, index);
-      this.optionsList.appendChild(optionElement);
-      
-      // Add animation for new options
-      this.helpers.animateOptionAdd(optionElement);
-    });
-    
-    this.updateClearButtonState();
-  }
-
-  /**
-   * Update clear button enabled/disabled state
-   */
-  updateClearButtonState() {
-    if (this.clearButton) {
-      this.clearButton.disabled = this.options.length === 0;
-    }
-  }
-
-  /**
-   * Clear input field and reset state
-   */
-  clearInput() {
-    if (this.optionInput) {
-      this.optionInput.value = '';
-      this.helpers.clearInputError();
-      this.validateInput();
-    }
-  }
-
-  /**
-   * Save options to localStorage
-   */
-  saveOptions() {
-    this.helpers.saveOptions();
-  }
-
-  /**
-   * Load options from localStorage
-   */
-  loadSavedOptions() {
-    this.helpers.loadSavedOptions();
-  }
-
-  /**
-   * Notify other components of options change
-   */
-  notifyOptionsChanged() {
-    const event = new CustomEvent('optionsChanged', {
-      detail: { options: [...this.options] }
-    });
-    document.dispatchEvent(event);
-  }
-
-  /**
-   * Get current options list
-   * @returns {Array} Current options
-   */
-  getOptions() {
-    return [...this.options];
-  }
-
-  /**
-   * Set options programmatically
-   * @param {Array} newOptions - New options array
-   */
-  setOptions(newOptions) {
-    if (!Array.isArray(newOptions)) return;
-    
-    this.options = newOptions
-      .filter(option => typeof option === 'string' && this.isValidOption(option))
-      .slice(0, this.maxOptions);
-    
-    this.renderOptions();
-    this.saveOptions();
-    this.notifyOptionsChanged();
-  }
-
-  /**
-   * Load saved options (delegated to helper)
-   */
-  loadSavedOptions() {
-    this.helpers.loadSavedOptions();
   }
 }
