@@ -11,7 +11,7 @@ set -e  # Exit on any error
 VPS_IP="178.16.130.178"
 VPS_USER="root"
 REMOTE_PROJECT_DIR="/var/www/randomchoicewheel.com"
-LOCAL_DEPLOY_SCRIPT="./scripts/deploy-international-seo.sh"
+LOCAL_DEPLOY_SCRIPT="./deploy-international-seo.sh"
 
 # Colors for output
 RED='\033[0;31m'
