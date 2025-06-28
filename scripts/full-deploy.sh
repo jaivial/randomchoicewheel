@@ -198,6 +198,15 @@ log "INFO" "Building project..."
 if npm run | grep -q "build"; then
     npm run build
     log "SUCCESS" "Project built successfully"
+    
+    # Copy sw.js to dist directory after build
+    log "INFO" "Copying sw.js to dist directory..."
+    if [ -f "sw.js" ]; then
+        cp sw.js dist/
+        log "SUCCESS" "sw.js copied to dist directory"
+    else
+        log "WARN" "sw.js not found in project root"
+    fi
 else
     log "ERROR" "Build script not found in package.json"
     exit 1
