@@ -203,5 +203,24 @@ export default {
     maxLength: '最多 {{max}} 个字符',
     invalidCharacters: '包含无效字符',
     duplicateEntry: '此条目已存在'
+  },
+
+  // Social proof section
+  socialProof: {
+    happyUsers: '满意用户',
+    decisionsMade: '做出的决定',
+    userRating: '用户评级',
+    trustedText: '受到全世界数千用户的信任'
+  },
+
+  // Recent activity messages
+  recentActivity: {
+    messages: [
+      '纽约的某人刚刚转动了转盘',
+      '伦敦的用户分享了他们的结果',
+      '东京的某人做出了决定',
+      '悉尼的用户使用了转盘',
+      '柏林的某人得到了答案'
+    ]
   }
 };

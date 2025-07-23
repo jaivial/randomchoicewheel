@@ -236,5 +236,24 @@ export default {
     maxLength: 'अधिकतम {{max}} अक्षर',
     invalidCharacters: 'अमान्य अक्षर हैं',
     duplicateEntry: 'यह एंट्री पहले से मौजूद है'
+  },
+
+  // Social proof section
+  socialProof: {
+    happyUsers: 'खुश उपयोगकर्ता',
+    decisionsMade: 'लिए गए निर्णय',
+    userRating: 'उपयोगकर्ता रेटिंग',
+    trustedText: 'दुनिया भर के हजारों उपयोगकर्ताओं द्वारा भरोसा किया गया'
+  },
+
+  // Recent activity messages
+  recentActivity: {
+    messages: [
+      'न्यूयॉर्क के किसी ने अभी व्हील घुमाया',
+      'लंदन के एक उपयोगकर्ता ने अपना परिणाम साझा किया',
+      'टोक्यो के किसी ने निर्णय लिया',
+      'सिडनी के एक उपयोगकर्ता ने व्हील का उपयोग किया',
+      'बर्लिन के किसी को अपना उत्तर मिला'
+    ]
   }
 };

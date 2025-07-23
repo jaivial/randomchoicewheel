@@ -203,5 +203,43 @@ export default {
     maxLength: 'Maximum {{max}} characters',
     invalidCharacters: 'Contains invalid characters',
     duplicateEntry: 'This entry already exists'
+  },
+
+  // Social proof section
+  socialProof: {
+    happyUsers: 'Happy Users',
+    decisionsMade: 'Decisions Made',
+    userRating: 'User Rating',
+    trustedText: 'Trusted by thousands of users worldwide'
+  },
+
+  // Social sharing section
+  socialSharing: {
+    title: 'Share Your Decision',
+    subtitle: 'Let others know about this useful tool!',
+    platforms: {
+      twitter: 'Twitter',
+      facebook: 'Facebook',
+      linkedin: 'LinkedIn',
+      reddit: 'Reddit',
+      whatsapp: 'WhatsApp',
+      telegram: 'Telegram',
+      copy: 'Copy Link'
+    },
+    followText: 'Follow us for updates:',
+    followButton: 'Follow @wheelspinner',
+    copySuccess: 'Copied!',
+    shareCount: 'people shared this tool'
+  },
+
+  // Recent activity messages
+  recentActivity: {
+    messages: [
+      'Someone in New York just spun the wheel',
+      'A user from London shared their result',
+      'Someone from Tokyo made a decision',
+      'A user from Sydney used the wheel',
+      'Someone from Berlin got their answer'
+    ]
   }
 };

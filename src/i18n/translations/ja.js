@@ -203,5 +203,24 @@ export default {
     maxLength: '最大 {{max}} 文字',
     invalidCharacters: '無効な文字が含まれています',
     duplicateEntry: 'この項目は既に存在します'
+  },
+
+  // Social proof section
+  socialProof: {
+    happyUsers: '満足したユーザー',
+    decisionsMade: '決定数',
+    userRating: 'ユーザー評価',
+    trustedText: '世界中の何千ものユーザーに信頼されています'
+  },
+
+  // Recent activity messages
+  recentActivity: {
+    messages: [
+      'ニューヨークの誰かがルーレットを回しました',
+      'ロンドンのユーザーが結果をシェアしました',
+      '東京の誰かが決定を下しました',
+      'シドニーのユーザーがルーレットを使用しました',
+      'ベルリンの誰かが答えを得ました'
+    ]
   }
 };

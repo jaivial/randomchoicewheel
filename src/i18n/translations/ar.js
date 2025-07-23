@@ -237,5 +237,24 @@ export default {
     maxLength: 'الحد الأقصى {{max}} حرف',
     invalidCharacters: 'يحتوي على أحرف غير صحيحة',
     duplicateEntry: 'هذا الإدخال موجود بالفعل'
+  },
+
+  // Social proof section
+  socialProof: {
+    happyUsers: 'مستخدمون سعداء',
+    decisionsMade: 'قرارات متخذة',
+    userRating: 'تقييم المستخدمين',
+    trustedText: 'موثوق به من قبل آلاف المستخدمين حول العالم'
+  },
+
+  // Recent activity messages
+  recentActivity: {
+    messages: [
+      'شخص من نيويورك أدار العجلة للتو',
+      'مستخدم من لندن شارك نتيجته',
+      'شخص من طوكيو اتخذ قراراً',
+      'مستخدم من سيدني استخدم العجلة',
+      'شخص من برلين حصل على إجابته'
+    ]
   }
 };

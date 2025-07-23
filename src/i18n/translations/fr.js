@@ -203,5 +203,24 @@ export default {
     maxLength: 'Maximum {{max}} caractères',
     invalidCharacters: 'Contient des caractères non valides',
     duplicateEntry: 'Cette entrée existe déjà'
+  },
+
+  // Social proof section
+  socialProof: {
+    happyUsers: 'Utilisateurs Satisfaits',
+    decisionsMade: 'Décisions Prises',
+    userRating: 'Note des Utilisateurs',
+    trustedText: 'Fait confiance par des milliers d\'utilisateurs dans le monde'
+  },
+
+  // Recent activity messages
+  recentActivity: {
+    messages: [
+      'Quelqu\'un à New York vient de faire tourner la roue',
+      'Un utilisateur de Londres a partagé son résultat',
+      'Quelqu\'un de Tokyo a pris une décision',
+      'Un utilisateur de Sydney a utilisé la roue',
+      'Quelqu\'un de Berlin a obtenu sa réponse'
+    ]
   }
 };

@@ -236,5 +236,24 @@ export default {
     maxLength: '최대 {{max}}자',
     invalidCharacters: '유효하지 않은 문자가 포함되어 있습니다',
     duplicateEntry: '이 항목은 이미 존재합니다'
+  },
+
+  // Social proof section
+  socialProof: {
+    happyUsers: '만족한 사용자',
+    decisionsMade: '내린 결정',
+    userRating: '사용자 평점',
+    trustedText: '전 세계 수천 명의 사용자가 신뢰합니다'
+  },
+
+  // Recent activity messages
+  recentActivity: {
+    messages: [
+      '뉴욕의 누군가가 방금 휠을 돌렸습니다',
+      '런던의 사용자가 결과를 공유했습니다',
+      '도쿄의 누군가가 결정을 내렸습니다',
+      '시드니의 사용자가 휠을 사용했습니다',
+      '베를린의 누군가가 답을 얻었습니다'
+    ]
   }
 };

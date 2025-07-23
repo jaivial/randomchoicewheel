@@ -6,11 +6,12 @@
       content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
     <!-- Basic SEO Meta Tags (will be updated dynamically) -->
-    <title>Random Choice Wheel - Make Decisions Easily</title>
+    <title>Decision Wheel Spinner - Make Decisions Easily | Popular Choice
+      Wheel</title>
     <meta name="description"
-      content="Make decisions easily with our beautiful random choice wheel. Add your options and spin the wheel to get a random result." />
+      content="Make decisions easily with our popular decision wheel spinner. Add your options and spin the wheel to get random results. Available in multiple languages with spin history." />
     <meta name="keywords"
-      content="wheel, spinner, decision, random, choice, options, spin, decide" />
+      content="decision wheel, wheel spinner, spin wheel, popular spinner, choice wheel, random decision, decision maker, spin history, multiple languages, english spinner" />
     <meta name="author" content="Random Choice Wheel" />
     <meta name="robots" content="index, follow" />
 
@@ -43,9 +44,9 @@
     <!-- OpenGraph Meta Tags for Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:title"
-      content="Random Choice Wheel - Make Decisions Easily" />
+      content="Decision Wheel Spinner - Make Decisions Easily | Popular Choice Wheel" />
     <meta property="og:description"
-      content="Make decisions easily with our beautiful random choice wheel. Perfect for when you can't decide!" />
+      content="Make decisions easily with our popular decision wheel spinner. Add your options and spin the wheel to get random results. Available in multiple languages with spin history." />
     <meta property="og:url" content="https://randomchoicewheel.com/" />
     <meta property="og:site_name" content="Random Choice Wheel" />
     <meta property="og:image" content="/assets/img/wheelicon.png" />
@@ -59,9 +60,9 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title"
-      content="Decision Wheel Spinner - Make Decisions Easily" />
+      content="Decision Wheel Spinner - Make Decisions Easily | Popular Choice Wheel" />
     <meta name="twitter:description"
-      content="Make decisions easily with our beautiful random choice wheel." />
+      content="Make decisions easily with our popular decision wheel spinner. Add your options and spin the wheel to get random results. Available in multiple languages with spin history." />
     <meta name="twitter:image" content="/assets/img/wheelicon.png" />
     <meta name="twitter:image:alt" content="Random Choice Wheel Icon" />
     <meta name="twitter:creator" content="@wheelspinner" />
@@ -71,6 +72,12 @@
     <link rel="preload" href="/src/i18n/translations/en.js" as="script" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com"
+      crossorigin />
+    <link rel="preload" href="/assets/img/wheelicon.png" as="image"
+      type="image/png" />
+    <link rel="modulepreload" href="/src/main_part1.js" />
 
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
@@ -86,15 +93,24 @@
       href="/assets/favicon/android-chrome-512x512.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/src/styles/globals.css" />
-    <link rel="stylesheet" href="/src/styles/glassmorphism.css" />
-    <link rel="stylesheet" href="/src/styles/responsive.css" />
-    <link rel="stylesheet" href="/src/styles/language-selector.css" />
-    <link rel="stylesheet" href="/src/styles/ads.css" />
+    <!-- Critical CSS - Minified for performance -->
+    <style>:root{--glass-bg:rgba(255,255,255,.15);--glass-border:rgba(255,255,255,.3);--glass-shadow:rgba(0,0,0,.2);--glass-hover:rgba(255,255,255,.25);--primary-gradient:linear-gradient(135deg,#667eea 0%,#764ba2 100%);--secondary-gradient:linear-gradient(135deg,#f093fb 0%,#f5576c 100%);--accent-gradient:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);--font-primary:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;--font-size-base:1rem;--font-size-lg:1.125rem;--font-size-xl:1.25rem;--font-size-2xl:1.5rem;--font-size-3xl:1.875rem;--spacing-sm:.5rem;--spacing-md:1rem;--spacing-lg:1.5rem;--spacing-xl:2rem;--spacing-2xl:3rem;--radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--transition-base:.3s ease;--z-modal:1000}*{margin:0;padding:0;box-sizing:border-box}body{font-family:var(--font-primary);font-size:var(--font-size-base);line-height:1.6;color:white;background:var(--primary-gradient);min-height:100vh;overflow-x:hidden}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 25% 25%,rgba(255,255,255,.1) 0%,transparent 50%),radial-gradient(circle at 75% 75%,rgba(255,255,255,.05) 0%,transparent 50%);pointer-events:none;z-index:-1}#app{min-height:100vh;padding:var(--spacing-lg)}.hidden{display:none!important}.glass-card{background:var(--glass-bg);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);border:2px solid var(--glass-border);border-radius:var(--radius-xl);box-shadow:0 12px 40px 0 var(--glass-shadow),0 4px 20px 0 rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.2),inset 0 -1px 0 rgba(255,255,255,.1);padding:var(--spacing-xl);position:relative;overflow:hidden}header.glass-card{overflow:visible!important}.glass-btn{background:var(--glass-bg);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);border:2px solid var(--glass-border);border-radius:var(--radius-lg);color:white;cursor:pointer;font-family:var(--font-primary);font-size:var(--font-size-base);font-weight:600;padding:var(--spacing-sm) var(--spacing-lg);position:relative;transition:all var(--transition-base);text-transform:uppercase;letter-spacing:.5px;outline:none;box-shadow:0 4px 15px 0 var(--glass-shadow),inset 0 1px 0 rgba(255,255,255,.15)}.glass-btn:disabled{opacity:.5;cursor:not-allowed;background:rgba(255,255,255,.05)}.glass-btn.primary{background:var(--secondary-gradient);border:1px solid rgba(245,87,108,.3);box-shadow:0 4px 15px 0 rgba(245,87,108,.2)}header{text-align:center;margin-bottom:var(--spacing-2xl)}.header-title{margin-top:35px;display:flex;align-items:center;justify-content:center;gap:var(--spacing-md);margin-bottom:var(--spacing-sm)}.app-icon{width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 2px 10px rgba(0,0,0,.3))}header h1{font-size:var(--font-size-3xl);font-weight:700;margin:0;text-shadow:0 2px 10px rgba(0,0,0,.3)}header p{font-size:var(--font-size-lg);opacity:.9}.main-container{display:grid;grid-template-columns:400px 1fr;gap:var(--spacing-2xl);max-width:1200px;margin:0 auto;overflow:hidden;align-items:start}#input-section{display:flex;flex-direction:column;gap:var(--spacing-lg)}.wheel-container{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--spacing-xl);min-height:500px}.wheel-spinner{position:relative;width:500px;height:500px;max-width:100%;max-height:100%}.wheel-svg{width:100%;height:100%;transition:transform .5s ease}.wheel-pointer{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:25px solid white;filter:drop-shadow(0 2px 5px rgba(0,0,0,.3));z-index:10}@media (max-width:768px){.main-container{grid-template-columns:1fr;gap:var(--spacing-xl)}header h1{font-size:var(--font-size-2xl)}}@media (max-width:480px){#app{padding:var(--spacing-xl) var(--spacing-md)}.wheel-spinner{width:calc(100vw - 2rem);max-width:450px;height:calc(100vw - 2rem);max-height:450px}}</style>
 
-    <!-- Google AdSense Configuration -->
-    <script async
+    <!-- Non-critical CSS - Load asynchronously -->
+    <link rel="preload" href="/src/styles/responsive.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/src/styles/language-selector.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/src/styles/ads.css" as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link rel="stylesheet" href="/src/styles/responsive.css">
+      <link rel="stylesheet" href="/src/styles/language-selector.css">
+      <link rel="stylesheet" href="/src/styles/ads.css">
+    </noscript>
+
+    <!-- Google AdSense Configuration - Load with defer to prevent render blocking -->
+    <script defer
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7898475614767076"
       crossorigin="anonymous"></script>
 
@@ -103,9 +119,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Random Choice Wheel",
-    "alternateName": "Spin the Wheel",
-    "description": "Make decisions easily with our beautiful random choice wheel. Add your options and spin the wheel to get a random result.",
+    "name": "Decision Wheel Spinner",
+    "alternateName": ["Spin the Wheel", "Popular Choice Wheel", "Decision Maker"],
+    "description": "Make decisions easily with our popular decision wheel spinner. Add your options and spin the wheel to get random results. Available in multiple languages with spin history.",
     "url": "https://randomchoicewheel.com/",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any",
@@ -129,12 +145,14 @@
       "availability": "https://schema.org/InStock"
     },
     "featureList": [
+      "Popular decision wheel spinner",
       "Random decision making",
-      "Customizable wheel options",
-      "Multiple language support",
+      "Customizable spin wheel options",
+      "Multiple language support (English and more)",
+      "Spin history tracking",
       "Responsive design",
       "No registration required",
-      "Free to use"
+      "Free choice wheel to use"
     ],
     "screenshot": "https://randomchoicewheel.com/assets/img/screenshot.png",
     "aggregateRating": {
@@ -183,25 +201,25 @@
     }
   }
   </script>
-    <script src="https://fpyf8.com/88/tag.min.js" data-zone="154421" async
-      data-cfasync="false"></script>
   </head>
-  <script src="https://fpyf8.com/88/tag.min.js" data-zone="154421" async
-    data-cfasync="false"></script>
   <body>
     <div id="app">
       <header class="glass-card">
         <div class="header-title">
-          <img src="/assets/img/wheelicon.png" alt="Wheel Icon"
-            class="app-icon" />
-          <h1 id="app-title">Random Choice Wheel</h1>
+          <img src="/assets/img/wheelicon.png" alt="Decision Wheel Spinner Icon"
+            class="app-icon"
+            width="48"
+            height="48"
+            loading="eager" />
+          <h1 id="app-title">Decision Wheel Spinner</h1>
         </div>
-        <p id="app-subtitle">Add your options and spin to decide!</p>
+        <p id="app-subtitle">Popular choice wheel - Add your options and spin to
+          decide!</p>
       </header>
 
       <main class="main-container">
         <section id="input-section" class="glass-card">
-          <h2>Add Options</h2>
+          <h2>Add Options to Spin Wheel</h2>
           <div class="input-group">
             <input type="text" id="option-input"
               placeholder="Enter an option..." />
@@ -237,6 +255,28 @@
       </div>
     </div>
 
-    <script type="module" src="/src/main_part1.js"></script>
+    <!-- Social Media Integration -->
+    <script type="module" src="/src/components/SocialMediaIntegration.js"
+      defer></script>
+    <script type="module" src="/src/components/SocialMediaEnhancer.js"
+      defer></script>
+
+    <!-- Service Worker Registration for Caching -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+
+    <!-- Main application script - optimized loading -->
+    <script type="module" src="/src/main_part1.js" defer></script>
   </body>
 </html>
