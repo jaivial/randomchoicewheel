@@ -14,8 +14,6 @@ import { LanguageSelector } from './components/LanguageSelector_part1.js';
 import { SEOManager } from './seo/SEOManager_part1.js';
 import { SEOAdvancedManager } from './seo/SEOManager_part2.js';
 import { SEOAnalyzer } from './seo/SEOAnalyzer.js';
-import AdManager from './components/AdManager.js';
-import SimpleAd from './components/SimpleAd.js';
 
 /**
  * Main Application Class
@@ -134,11 +132,6 @@ class DecisionWheelApp {
       // Initialize Wheel History Manager
       this.components.historyManager = new WheelHistoryManager(this.components.languageManager);
       
-      // Initialize Ad Manager
-      this.components.adManager = AdManager;
-      
-      // Initialize Simple Ads (alternative implementation)
-      this.components.simpleAd = SimpleAd;
       
       console.log('All components initialized');
       
@@ -258,11 +251,6 @@ class DecisionWheelApp {
       this.components.seoManager.cleanup();
     }
     
-    // Cleanup Ad Manager
-    if (this.components.adManager) {
-      // Ad Manager cleanup would be handled here if needed
-      console.log('Ad Manager cleaned up');
-    }
     
     // Remove global i18n reference
     if (window.i18n) {

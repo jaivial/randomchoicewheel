@@ -81,17 +81,6 @@ export class AppEventHandlers {
     // Modal will handle itself via its own event listener
     // Confetti will also trigger automatically
     
-    // Check if modal ad should be displayed
-    if (this.app.components.adManager) {
-      // Create and potentially show modal ad
-      import('./components/AdUnits.js').then(({ ModalAdUnit }) => {
-        const modalAd = new ModalAdUnit();
-        if (modalAd.shouldShow()) {
-          modalAd.createElement();
-          setTimeout(() => modalAd.show(), 2000); // Show after result modal
-        }
-      });
-    }
     
     // Additional winner handling
     this.logWinnerToAnalytics(winner);
