@@ -222,5 +222,102 @@ export default {
       '悉尼的用户使用了转盘',
       '柏林的某人得到了答案'
     ]
+  },
+
+  // AdSense Compliance Content
+  content: {
+    howToUse: {
+      title: '如何使用决策转盘',
+      step1: {
+        title: '步骤1：添加您的选项',
+        description: '首先添加您想考虑的所有选择。在输入框中输入每个选项并点击"添加"以将其包含在您的决策转盘中。您可以添加任意数量的选项 - 我们的转盘会自动调整以适应所有选择。'
+      },
+      step2: {
+        title: '步骤2：转动转盘',
+        description: '添加完所有选项后，点击"转动转盘！"按钮开始随机选择过程。转盘将旋转几秒钟，然后停在您的某个选项上，为您提供公正的决定。'
+      },
+      step3: {
+        title: '步骤3：获得结果',
+        description: '转盘停止旋转后，您将看到所选选项被突出显示。如果您对结果不满意，您可以随时再次旋转或修改选项列表以更好地反映您的偏好。'
+      }
+    },
+    popularUses: {
+      title: '我们决策转盘的热门用途',
+      foodDecisions: {
+        title: '🍕 美食决策',
+        description: '无法决定晚餐吃什么？将您最喜欢的餐厅、菜系或餐点选项添加到转盘中，让它为您选择。非常适合无法就用餐地点达成一致的情侣或家庭。'
+      },
+      entertainmentChoices: {
+        title: '🎬 娱乐选择',
+        description: '使用我们的转盘来选择要观看的电影、要玩的游戏或要做的活动。添加您的娱乐选项，让转盘决定您的晚上计划。'
+      },
+      travelPlanning: {
+        title: '✈️ 旅行规划',
+        description: '正在规划下次度假但无法决定目的地？列出您的潜在旅行地点，转动转盘随机选择您的下一次冒险。'
+      },
+      dailyActivities: {
+        title: '🎯 日常活动',
+        description: '通过使用转盘来选择锻炼例程、周末活动，甚至选择首先要处理的任务，让日常决策变得更有趣。'
+      },
+      partyGames: {
+        title: '🎪 聚会游戏',
+        description: '通过使用转盘进行游戏选择、真心话大冒险挑战或为参与者分配有趣的任务，为聚会和聚会增添兴奋感。'
+      },
+      educationalTools: {
+        title: '📚 教育工具',
+        description: '教师可以使用决策转盘进行随机学生选择、选择讨论主题，或使课堂活动更加有趣和公平。'
+      }
+    },
+    whyChoose: {
+      title: '为什么选择我们的决策转盘？',
+      randomResults: {
+        title: '🔄 真正随机的结果',
+        description: '我们的算法确保完全公正的选择，给每个选项相等的被选中机会。没有隐藏的偏好或模式。'
+      },
+      mobileFriendly: {
+        title: '📱 移动友好',
+        description: '在所有设备上完美运行 - 智能手机、平板电脑和台式电脑。响应式设计确保无论屏幕大小如何都有流畅的体验。'
+      },
+      noRegistration: {
+        title: '🚀 无需注册',
+        description: '无需创建账户或提供个人信息即可立即开始使用转盘。简单、快速且匿名。'
+      },
+      beautifulDesign: {
+        title: '🎨 精美设计',
+        description: '享受现代、视觉吸引力的界面，具有流畅的动画和玻璃拟态效果，让决策制定更加愉快。'
+      },
+      fastPerformance: {
+        title: '⚡ 快速性能',
+        description: '为速度优化，加载时间最短，旋转动画流畅。快速做出决定，没有令人沮丧的延迟。'
+      },
+      multipleLanguages: {
+        title: '🌐 多种语言',
+        description: '提供多种语言以服务全球用户。在中文、英语、西班牙语、法语等之间切换，获得本地化体验。'
+      }
+    },
+    tips: {
+      title: '更好决策制定的小贴士',
+      subtitle: '充分利用您的转盘体验',
+      beSpecific: {
+        title: '要具体：',
+        description: '添加选项时，尽可能具体。与其说"意大利菜"，不如试试"马里奥比萨店"或"托尼意面店"以获得更清晰的结果。'
+      },
+      considerWeight: {
+        title: '考虑权重：',
+        description: '如果某些选项比其他选项更有吸引力，您可以多次添加它们以增加被选中的机会。'
+      },
+      reviewOptions: {
+        title: '检查选项：',
+        description: '旋转前，浏览您的列表以确保所有选项仍然相关且对您有吸引力。'
+      },
+      trustProcess: {
+        title: '相信过程：',
+        description: '一旦您旋转了转盘，尽量按照结果行事。转盘通过为您做出选择来帮助消除决策瘫痪。'
+      },
+      useBrainstorming: {
+        title: '用于头脑风暴：',
+        description: '添加创意或意想不到的选项来发现您可能没有考虑过的新可能性。'
+      }
+    }
   }
 };

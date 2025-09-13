@@ -222,5 +222,102 @@ export default {
       'Un usuario de Sídney usó la rueda',
       'Alguien de Berlín obtuvo su respuesta'
     ]
+  },
+
+  // AdSense Compliance Content
+  content: {
+    howToUse: {
+      title: 'Cómo Usar la Ruleta de Decisiones',
+      step1: {
+        title: 'Paso 1: Agregar Tus Opciones',
+        description: 'Comienza agregando todas las opciones que quieras considerar. Escribe cada opción en el campo de entrada y haz clic en "Agregar" para incluirla en tu rueda de decisiones. Puedes agregar tantas opciones como necesites: nuestra rueda se ajustará automáticamente para acomodar todas tus opciones.'
+      },
+      step2: {
+        title: 'Paso 2: Girar la Rueda',
+        description: 'Una vez que hayas agregado todas tus opciones, haz clic en el botón "¡Girar la Rueda!" para iniciar el proceso de selección aleatoria. La rueda girará durante unos segundos antes de detenerse en una de tus opciones, proporcionándote una decisión imparcial.'
+      },
+      step3: {
+        title: 'Paso 3: Obtener Tu Resultado',
+        description: 'Después de que la rueda se detenga, verás la opción seleccionada resaltada. Si no estás satisfecho con el resultado, siempre puedes girar de nuevo o modificar tu lista de opciones para reflejar mejor tus preferencias.'
+      }
+    },
+    popularUses: {
+      title: 'Usos Populares de Nuestra Rueda de Decisiones',
+      foodDecisions: {
+        title: '🍕 Decisiones de Comida',
+        description: '¿No puedes decidir qué cenar? Agrega tus restaurantes favoritos, cocinas o opciones de comida a la rueda y deja que elija por ti. Perfecto para parejas o familias que no se ponen de acuerdo en dónde cenar.'
+      },
+      entertainmentChoices: {
+        title: '🎬 Opciones de Entretenimiento',
+        description: 'Usa nuestra ruleta para elegir películas que ver, juegos que jugar o actividades que hacer. Agrega tus opciones de entretenimiento y deja que la rueda decida tus planes para la noche.'
+      },
+      travelPlanning: {
+        title: '✈️ Planificación de Viajes',
+        description: '¿Planificando tus próximas vacaciones pero no puedes decidir el destino? Lista tus posibles lugares de viaje y gira la rueda para seleccionar aleatoriamente tu próxima aventura.'
+      },
+      dailyActivities: {
+        title: '🎯 Actividades Diarias',
+        description: 'Haz que las decisiones cotidianas sean más divertidas usando la rueda para rutinas de ejercicio, actividades de fin de semana o incluso elegir qué tarea abordar primero.'
+      },
+      partyGames: {
+        title: '🎪 Juegos de Fiesta',
+        description: 'Agrega emoción a fiestas y reuniones usando la rueda para selección de juegos, desafíos de verdad o atrevimiento, o asignar tareas divertidas a los participantes.'
+      },
+      educationalTools: {
+        title: '📚 Herramientas Educativas',
+        description: 'Los maestros pueden usar la rueda de decisiones para selección aleatoria de estudiantes, elegir temas de discusión, o hacer que las actividades del aula sean más atractivas y justas.'
+      }
+    },
+    whyChoose: {
+      title: '¿Por Qué Elegir Nuestra Ruleta de Decisiones?',
+      randomResults: {
+        title: '🔄 Resultados Verdaderamente Aleatorios',
+        description: 'Nuestro algoritmo garantiza una selección completamente imparcial, dando a cada opción una oportunidad igual de ser elegida. Sin preferencias ocultas o patrones.'
+      },
+      mobileFriendly: {
+        title: '📱 Compatible con Móviles',
+        description: 'Funciona perfectamente en todos los dispositivos: smartphones, tablets y computadoras de escritorio. El diseño responsivo garantiza una experiencia fluida independientemente del tamaño de pantalla.'
+      },
+      noRegistration: {
+        title: '🚀 Sin Registro Requerido',
+        description: 'Comienza a usar la rueda inmediatamente sin crear cuentas o proporcionar información personal. Simple, rápido y anónimo.'
+      },
+      beautifulDesign: {
+        title: '🎨 Diseño Hermoso',
+        description: 'Disfruta de una interfaz moderna y visualmente atractiva con animaciones suaves y efectos de glassmorphism que hacen que tomar decisiones sea más agradable.'
+      },
+      fastPerformance: {
+        title: '⚡ Rendimiento Rápido',
+        description: 'Optimizado para velocidad con tiempos de carga mínimos y animaciones de giro suaves. Toma tus decisiones rápidamente sin retrasos frustrantes.'
+      },
+      multipleLanguages: {
+        title: '🌐 Múltiples Idiomas',
+        description: 'Disponible en múltiples idiomas para servir a usuarios de todo el mundo. Cambia entre inglés, español, francés y más para una experiencia localizada.'
+      }
+    },
+    tips: {
+      title: 'Consejos para Mejores Decisiones',
+      subtitle: 'Aprovechando al Máximo Tu Experiencia con la Ruleta',
+      beSpecific: {
+        title: 'Sé Específico:',
+        description: 'Al agregar opciones, sé lo más específico posible. En lugar de "comida italiana", prueba "Pizza de Mario" o "Casa de Pasta de Tony" para resultados más claros.'
+      },
+      considerWeight: {
+        title: 'Considera el Peso:',
+        description: 'Si algunas opciones son más atractivas que otras, puedes agregarlas múltiples veces para aumentar sus posibilidades de ser seleccionadas.'
+      },
+      reviewOptions: {
+        title: 'Revisa Tus Opciones:',
+        description: 'Antes de girar, lee tu lista para asegurarte de que todas las opciones sigan siendo relevantes y atractivas para ti.'
+      },
+      trustProcess: {
+        title: 'Confía en el Proceso:',
+        description: 'Una vez que gires, trata de seguir con el resultado. La rueda ayuda a eliminar la parálisis de decisión tomando la elección por ti.'
+      },
+      useBrainstorming: {
+        title: 'Usa para Lluvia de Ideas:',
+        description: 'Agrega opciones creativas o inesperadas para descubrir nuevas posibilidades que tal vez no hayas considerado.'
+      }
+    }
   }
 };

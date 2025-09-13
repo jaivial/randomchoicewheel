@@ -222,5 +222,102 @@ export default {
       'Ein Nutzer aus Sydney hat das Rad benutzt',
       'Jemand aus Berlin hat seine Antwort erhalten'
     ]
+  },
+
+  // AdSense Compliance Content
+  content: {
+    howToUse: {
+      title: 'So verwenden Sie das Entscheidungsrad',
+      step1: {
+        title: 'Schritt 1: Optionen hinzufügen',
+        description: 'Beginnen Sie damit, alle Wahlmöglichkeiten hinzuzufügen, die Sie in Betracht ziehen möchten. Geben Sie jede Option in das Eingabefeld ein und klicken Sie auf "Hinzufügen", um sie in Ihr Entscheidungsrad aufzunehmen. Sie können so viele Optionen hinzufügen, wie Sie benötigen - unser Rad passt sich automatisch an, um alle Ihre Auswahlmöglichkeiten zu berücksichtigen.'
+      },
+      step2: {
+        title: 'Schritt 2: Das Rad drehen',
+        description: 'Sobald Sie alle Ihre Optionen hinzugefügt haben, klicken Sie auf die Schaltfläche "Rad drehen!", um den zufälligen Auswahlprozess zu starten. Das Rad dreht sich einige Sekunden lang, bevor es auf einer Ihrer Optionen landet und Ihnen eine unvoreingenommene Entscheidung liefert.'
+      },
+      step3: {
+        title: 'Schritt 3: Ihr Ergebnis erhalten',
+        description: 'Nachdem das Rad aufgehört hat zu drehen, sehen Sie die ausgewählte Option hervorgehoben. Wenn Sie mit dem Ergebnis nicht zufrieden sind, können Sie jederzeit erneut drehen oder Ihre Optionsliste ändern, um Ihre Präferenzen besser widerzuspiegeln.'
+      }
+    },
+    popularUses: {
+      title: 'Beliebte Verwendungen für unser Entscheidungsrad',
+      foodDecisions: {
+        title: '🍕 Essensentscheidungen',
+        description: 'Können Sie sich nicht entscheiden, was Sie zum Abendessen essen sollen? Fügen Sie Ihre Lieblingsrestaurants, Küchen oder Mahlzeitoptionen zum Rad hinzu und lassen Sie es für Sie auswählen. Perfekt für Paare oder Familien, die sich nicht einigen können, wo sie essen gehen.'
+      },
+      entertainmentChoices: {
+        title: '🎬 Unterhaltungsoptionen',
+        description: 'Verwenden Sie unser Drehrad, um Filme zum Anschauen, Spiele zum Spielen oder Aktivitäten auszuwählen. Fügen Sie Ihre Unterhaltungsoptionen hinzu und lassen Sie das Rad Ihre Abendpläne entscheiden.'
+      },
+      travelPlanning: {
+        title: '✈️ Reiseplanung',
+        description: 'Planen Sie Ihren nächsten Urlaub, können sich aber nicht für ein Reiseziel entscheiden? Listen Sie Ihre potenziellen Reiseziele auf und drehen Sie das Rad, um zufällig Ihr nächstes Abenteuer auszuwählen.'
+      },
+      dailyActivities: {
+        title: '🎯 Tägliche Aktivitäten',
+        description: 'Machen Sie alltägliche Entscheidungen unterhaltsamer, indem Sie das Rad für Trainingsroutinen, Wochenendaktivitäten oder sogar zur Auswahl verwenden, welche Aufgabe Sie zuerst angehen.'
+      },
+      partyGames: {
+        title: '🎪 Partyspiele',
+        description: 'Bringen Sie Spannung in Partys und Zusammenkünfte, indem Sie das Rad für die Spielauswahl, Wahrheit oder Pflicht-Herausforderungen oder die Zuteilung lustiger Aufgaben an Teilnehmer verwenden.'
+      },
+      educationalTools: {
+        title: '📚 Bildungstools',
+        description: 'Lehrer können das Entscheidungsrad für die zufällige Schülerauswahl, die Auswahl von Diskussionsthemen oder um Klassenraumaktivitäten ansprechender und fairer zu gestalten, verwenden.'
+      }
+    },
+    whyChoose: {
+      title: 'Warum unser Entscheidungsrad wählen?',
+      randomResults: {
+        title: '🔄 Wirklich zufällige Ergebnisse',
+        description: 'Unser Algorithmus gewährleistet eine vollständig unvoreingenommene Auswahl und gibt jeder Option die gleiche Chance, ausgewählt zu werden. Keine versteckten Präferenzen oder Muster.'
+      },
+      mobileFriendly: {
+        title: '📱 Mobilfreundlich',
+        description: 'Funktioniert perfekt auf allen Geräten - Smartphones, Tablets und Desktop-Computern. Das responsive Design gewährleistet eine reibungslose Erfahrung unabhängig von der Bildschirmgröße.'
+      },
+      noRegistration: {
+        title: '🚀 Keine Registrierung erforderlich',
+        description: 'Beginnen Sie sofort mit der Nutzung des Rads, ohne Konten zu erstellen oder persönliche Informationen anzugeben. Einfach, schnell und anonym.'
+      },
+      beautifulDesign: {
+        title: '🎨 Schönes Design',
+        description: 'Genießen Sie eine moderne, optisch ansprechende Benutzeroberfläche mit flüssigen Animationen und Glasmorphismus-Effekten, die das Entscheiden angenehmer machen.'
+      },
+      fastPerformance: {
+        title: '⚡ Schnelle Leistung',
+        description: 'Optimiert für Geschwindigkeit mit minimalen Ladezeiten und flüssigen Drehanimationen. Treffen Sie Ihre Entscheidungen schnell ohne frustrierende Verzögerungen.'
+      },
+      multipleLanguages: {
+        title: '🌐 Mehrere Sprachen',
+        description: 'Verfügbar in mehreren Sprachen, um Nutzer weltweit zu bedienen. Wechseln Sie zwischen Deutsch, Englisch, Spanisch, Französisch und mehr für eine lokalisierte Erfahrung.'
+      }
+    },
+    tips: {
+      title: 'Tipps für bessere Entscheidungsfindung',
+      subtitle: 'Das Beste aus Ihrer Rad-Erfahrung herausholen',
+      beSpecific: {
+        title: 'Seien Sie spezifisch:',
+        description: 'Beim Hinzufügen von Optionen seien Sie so spezifisch wie möglich. Anstatt "Italienisches Essen" versuchen Sie "Marios Pizza" oder "Tonys Nudelhaus" für klarere Ergebnisse.'
+      },
+      considerWeight: {
+        title: 'Gewichtung berücksichtigen:',
+        description: 'Wenn einige Optionen ansprechender sind als andere, können Sie sie mehrmals hinzufügen, um ihre Chancen auf Auswahl zu erhöhen.'
+      },
+      reviewOptions: {
+        title: 'Optionen überprüfen:',
+        description: 'Bevor Sie drehen, lesen Sie Ihre Liste durch, um sicherzustellen, dass alle Optionen noch relevant und ansprechend für Sie sind.'
+      },
+      trustProcess: {
+        title: 'Vertrauen Sie dem Prozess:',
+        description: 'Sobald Sie gedreht haben, versuchen Sie, mit dem Ergebnis zu gehen. Das Rad hilft dabei, Entscheidungslähmung zu beseitigen, indem es die Wahl für Sie trifft.'
+      },
+      useBrainstorming: {
+        title: 'Für Brainstorming nutzen:',
+        description: 'Fügen Sie kreative oder unerwartete Optionen hinzu, um neue Möglichkeiten zu entdecken, die Sie vielleicht nicht in Betracht gezogen hätten.'
+      }
+    }
   }
 };

@@ -222,5 +222,102 @@ export default {
       'Um usuário de Sydney usou a roleta',
       'Alguém de Berlim obteve sua resposta'
     ]
+  },
+
+  // AdSense Compliance Content
+  content: {
+    howToUse: {
+      title: 'Como Usar a Roleta de Decisão',
+      step1: {
+        title: 'Passo 1: Adicione Suas Opções',
+        description: 'Comece adicionando todas as escolhas que você quer considerar. Digite cada opção no campo de entrada e clique em "Adicionar" para incluí-la na sua roleta de decisão. Você pode adicionar quantas opções precisar - nossa roleta se ajustará automaticamente para acomodar todas as suas escolhas.'
+      },
+      step2: {
+        title: 'Passo 2: Gire a Roleta',
+        description: 'Depois de adicionar todas as suas opções, clique no botão "Girar a Roleta!" para iniciar o processo de seleção aleatória. A roleta girará por alguns segundos antes de parar em uma de suas opções, fornecendo uma decisão imparcial.'
+      },
+      step3: {
+        title: 'Passo 3: Obtenha Seu Resultado',
+        description: 'Após a roleta parar de girar, você verá a opção selecionada destacada. Se não estiver satisfeito com o resultado, você sempre pode girar novamente ou modificar sua lista de opções para refletir melhor suas preferências.'
+      }
+    },
+    popularUses: {
+      title: 'Usos Populares da Nossa Roleta de Decisão',
+      foodDecisions: {
+        title: '🍕 Decisões de Comida',
+        description: 'Não consegue decidir o que comer no jantar? Adicione seus restaurantes favoritos, culinárias ou opções de refeição à roleta e deixe ela escolher por você. Perfeito para casais ou famílias que não conseguem concordar onde jantar.'
+      },
+      entertainmentChoices: {
+        title: '🎬 Escolhas de Entretenimento',
+        description: 'Use nossa roleta para escolher filmes para assistir, jogos para jogar ou atividades para fazer. Adicione suas opções de entretenimento e deixe a roleta decidir seus planos da noite.'
+      },
+      travelPlanning: {
+        title: '✈️ Planejamento de Viagem',
+        description: 'Planejando suas próximas férias mas não consegue decidir o destino? Liste seus potenciais locais de viagem e gire a roleta para selecionar aleatoriamente sua próxima aventura.'
+      },
+      dailyActivities: {
+        title: '🎯 Atividades Diárias',
+        description: 'Torne as decisões do dia a dia mais divertidas usando a roleta para rotinas de exercício, atividades de fim de semana, ou até mesmo para escolher qual tarefa abordar primeiro.'
+      },
+      partyGames: {
+        title: '🎪 Jogos de Festa',
+        description: 'Adicione emoção às festas e reuniões usando a roleta para seleção de jogos, desafios de verdade ou consequência, ou distribuindo tarefas divertidas aos participantes.'
+      },
+      educationalTools: {
+        title: '📚 Ferramentas Educacionais',
+        description: 'Professores podem usar a roleta de decisão para seleção aleatória de alunos, escolher tópicos de discussão, ou tornar as atividades em sala de aula mais envolventes e justas.'
+      }
+    },
+    whyChoose: {
+      title: 'Por Que Escolher Nossa Roleta de Decisão?',
+      randomResults: {
+        title: '🔄 Resultados Verdadeiramente Aleatórios',
+        description: 'Nosso algoritmo garante seleção completamente imparcial, dando a cada opção uma chance igual de ser escolhida. Sem preferências ocultas ou padrões.'
+      },
+      mobileFriendly: {
+        title: '📱 Compatível com Celular',
+        description: 'Funciona perfeitamente em todos os dispositivos - smartphones, tablets e computadores desktop. O design responsivo garante uma experiência suave independentemente do tamanho da tela.'
+      },
+      noRegistration: {
+        title: '🚀 Sem Necessidade de Cadastro',
+        description: 'Comece a usar a roleta imediatamente sem criar contas ou fornecer informações pessoais. Simples, rápido e anônimo.'
+      },
+      beautifulDesign: {
+        title: '🎨 Design Bonito',
+        description: 'Aproveite uma interface moderna e visualmente atraente com animações suaves e efeitos de glassmorfismo que tornam a tomada de decisão mais prazerosa.'
+      },
+      fastPerformance: {
+        title: '⚡ Performance Rápida',
+        description: 'Otimizado para velocidade com tempos mínimos de carregamento e animações de giro suaves. Tenha suas decisões tomadas rapidamente sem atrasos frustrantes.'
+      },
+      multipleLanguages: {
+        title: '🌐 Múltiplos Idiomas',
+        description: 'Disponível em vários idiomas para atender usuários do mundo todo. Alterne entre inglês, espanhol, francês e mais para uma experiência localizada.'
+      }
+    },
+    tips: {
+      title: 'Dicas para Melhor Tomada de Decisão',
+      subtitle: 'Aproveitando ao Máximo Sua Experiência com a Roleta',
+      beSpecific: {
+        title: 'Seja Específico:',
+        description: 'Ao adicionar opções, seja o mais específico possível. Em vez de "comida italiana", tente "Pizza do Mario" ou "Casa de Massas do Tony" para resultados mais claros.'
+      },
+      considerWeight: {
+        title: 'Considere o Peso:',
+        description: 'Se algumas opções são mais atraentes que outras, você pode adicioná-las várias vezes para aumentar suas chances de serem selecionadas.'
+      },
+      reviewOptions: {
+        title: 'Revise Suas Opções:',
+        description: 'Antes de girar, leia sua lista para ter certeza de que todas as opções ainda são relevantes e atraentes para você.'
+      },
+      trustProcess: {
+        title: 'Confie no Processo:',
+        description: 'Uma vez que você gire, tente aceitar o resultado. A roleta ajuda a remover a paralisia de decisão fazendo a escolha por você.'
+      },
+      useBrainstorming: {
+        title: 'Use para Brainstorming:',
+        description: 'Adicione opções criativas ou inesperadas para descobrir novas possibilidades que você pode não ter considerado.'
+      }
+    }
   }
 };
